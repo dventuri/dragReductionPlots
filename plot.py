@@ -9,19 +9,25 @@ plt.style.use('default')
 ### Experiment - Pang and Wei (2013)
 #Single-phase flow
 UP_Exp0 = np.loadtxt("graficos_artigo/vel_mono_log.csv",
-                      dtype=float,
-                      skiprows=0,
-                      delimiter=' ')
+                     dtype=float,
+                     skiprows=0,
+                     delimiter=' ')
 UP_Exp0[:,0] = -1*(UP_Exp0[:,0]-300)  #'Right side' of data has better results near the wall
                                       # changed '0-300' to '300-0'
 uP_Exp0 = np.loadtxt("graficos_artigo/u_rms_alfa0.1_d0.5.csv",
-                      dtype=float,
-                      skiprows=0,
-                      delimiter=' ')
+                     dtype=float,
+                     skiprows=0,
+                     delimiter=' ')
 vP_Exp0 = np.loadtxt("graficos_artigo/v_rms_alfa0.1_d0.5.csv",
+                     dtype=float,
+                     skiprows=0,
+                     delimiter=' ')
+UP_ExpA3 = np.loadtxt("graficos_artigo/vel_pang_alfa0.1_d0.5.csv",
                       dtype=float,
                       skiprows=0,
                       delimiter=' ')
+UP_ExpA3[:,0] = -1*(UP_ExpA3[:,0]-300)  #'Right side' of data has better results near the wall
+                                        # changed '0-300' to '300-0'
 
 ### Single-phase flow - DNS
 #Giusti et al. (2005)
@@ -99,28 +105,34 @@ UP_0 = np.loadtxt("graficos_artigo/u_mono_128_dt10(-4)_novo_180000.curve",
 UP_0[:,0] = UP_0[:,0]*0.0302353/(0.001/1000)
 UP_0[:,1] = UP_0[:,1]/0.0302353
 uP_0 = np.loadtxt("graficos_artigo/u_rms_mono_128_dt10(-4)_novo_180000.curve",
-                        dtype=float,
-                        skiprows=2,
-                        delimiter=' ')
+                  dtype=float,
+                  skiprows=2,
+                  delimiter=' ')
 uP_0[:,0] = uP_0[:,0]*0.0302353/(0.001/1000)
 uP_0[:,1] = uP_0[:,1]/0.0302353
 vP_0 = np.loadtxt("graficos_artigo/v_rms_mono_128_dt10(-4)_novo_180000.curve",
-                        dtype=float,
-                        skiprows=2,
-                        delimiter=' ')
+                  dtype=float,
+                  skiprows=2,
+                  delimiter=' ')
 vP_0[:,0] = vP_0[:,0]*0.0302353/(0.001/1000)
 vP_0[:,1] = vP_0[:,1]/0.0302353
 wP_0 = np.loadtxt("graficos_artigo/w_rms_mono_128_dt10(-4)_novo_180000.curve",
-                        dtype=float,
-                        skiprows=2,
-                        delimiter=' ')
+                  dtype=float,
+                  skiprows=2,
+                  delimiter=' ')
 wP_0[:,0] = wP_0[:,0]*0.0302353/(0.001/1000)
 wP_0[:,1] = wP_0[:,1]/0.0302353
+UP_A3 = np.loadtxt("graficos_artigo/u_average_bif_alfa0.1_d0.5_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+UP_A3[:,0] = UP_A3[:,0]*0.0302353/(0.001/1000)
+UP_A3[:,1] = UP_A3[:,1]/0.0302353
 
 ### ###
 
 
-### Figure single-phase - Mean velocity
+### FIGURE SINGLE-PHASE - MEAN VELOCITY
 plt.style.use(os.path.join(os.environ['HOME'],
                            'Templates',
                            'matplotlib',
@@ -168,7 +180,7 @@ fig.tight_layout(pad=0.01)
 ###
 
 
-### Figure single-phase - RMS velocities
+### FIGURE SINGLE-PHASE - RMS VELOCITIES
 plt.style.use(os.path.join(os.environ['HOME'],
                            'Templates',
                            'matplotlib',
@@ -180,7 +192,7 @@ ax[0].set_ylabel(r'$u^{+}$')
 ax[0].axis([0.0, 150.0, 0.0, 3.0])
 ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
 ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
-
+#
 ax[0].yaxis.set_major_locator(plt.MultipleLocator(0.5))
 ax[0].yaxis.set_minor_locator(plt.MultipleLocator(0.25))
 ax[0].scatter(uP_Exp0[:,0], uP_Exp0[:,1],
@@ -211,7 +223,7 @@ ax[0].plot(uP_Pa[:,0], uP_Pa[:,1],
            linewidth=1,
            linestyle= ':')
 ax[0].legend(loc='best')
-
+#
 ax[1].set_xlabel(r'$y^{+}$')
 ax[1].set_ylim([0.0, 1.0])
 ax[1].yaxis.set_major_locator(plt.MultipleLocator(0.5))
@@ -243,8 +255,7 @@ ax[1].plot(vP_Pa[:,0], vP_Pa[:,1],
            color='black',
            linewidth=1,
            linestyle= ':')
-# ax[1].legend(loc='best')
-
+#
 ax[2].set_ylim([0.0, 1.2])
 ax[2].yaxis.set_major_locator(plt.MultipleLocator(0.5))
 ax[2].yaxis.set_minor_locator(plt.MultipleLocator(0.25))
@@ -268,10 +279,41 @@ ax[2].plot(wP_Pa[:,0], wP_Pa[:,1],
            color='black',
            linewidth=1,
            linestyle= ':')
-# ax[1].legend(loc='best')
-
+#
 fig.tight_layout(pad=0.01)
-plt.savefig('velRMS_mono_comp_exp_dns.png',
-            dpi=1000,
-            format='png')
+# plt.savefig('velRMS_mono_comp_exp_dns.png',
+#             dpi=1000,
+#             format='png')
+###
+
+### FIGURE TWO-PHASE - MEAN VELOCITY
+plt.style.use(os.path.join(os.environ['HOME'],
+                           'Templates',
+                           'matplotlib',
+                           'singleColumn.mplstyle'))
+fig, ax = plt.subplots()
+ax.set_xlabel(r'$y^{+}$')
+ax.set_ylabel(r'$u^{+}$')
+ax.axis([0.0, 150.0, 0.0, 20.0])
+ax.xaxis.set_major_locator(plt.MultipleLocator(30))
+ax.xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax.yaxis.set_major_locator(plt.MultipleLocator(4))
+ax.yaxis.set_minor_locator(plt.MultipleLocator(1))
+ax.scatter(UP_ExpA3[:,0], UP_ExpA3[:,1],
+           s=25,
+           c='white',
+           marker='o',
+           edgecolors='black',
+           linewidths='1',
+           label='Pang and Wei (2013)')
+ax.plot(UP_A3[:,0], UP_A3[:,1],
+        label='Present work',
+        color='black',
+        linewidth=1,
+        linestyle='-')
+ax.legend(loc='best')
+fig.tight_layout(pad=0.01)
+# plt.savefig('vel_mono_comp_exp_dns.png',
+#             dpi=1000,
+#             format='png')
 ###
