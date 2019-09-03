@@ -1,9 +1,7 @@
-# import locale
-# locale.setlocale(locale.LC_NUMERIC, "en_US")
+import os
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib as mpl
-mpl.style.use('default')
+plt.style.use('default')
 
 
 ### READ ALL DATA ###
@@ -52,11 +50,19 @@ uP_0 = uP_0/0.0302353
 
 
 ### Figure single-phase
+plt.style.use(os.path.join(os.environ['HOME'],
+                           'Templates',
+                           'matplotlib',
+                           'singleColumn.mplstyle'))
 fig, ax = plt.subplots()
 # plt.rcParams['legend.fontsize'] = 10
-ax.set_xlabel(r'$y^{+}$')#, fontsize=16)
-ax.set_ylabel(r'$u^{+}$')#, fontsize=18)
+ax.set_xlabel(r'$y^{+}$')
+ax.set_ylabel(r'$u^{+}$')
 ax.axis([0.0, 150.0, 0.0, 20.0])
+ax.xaxis.set_major_locator(plt.MultipleLocator(30))
+ax.xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax.yaxis.set_major_locator(plt.MultipleLocator(4))
+ax.yaxis.set_minor_locator(plt.MultipleLocator(1))
 
 ax.scatter(yP_Exp0, uP_Exp0,
            s=25,
@@ -91,9 +97,7 @@ ax.plot(yP_Gi, uP_Gi,
         linestyle= '-.')
 
 ax.legend(loc='lower right')
-fig.tight_layout()
-# #salvar a figura
-# plt.savefig('vel_mono_comp_exp_dns_semilog.pdf',
-#             format='pdf')
-# plt.savefig('vel_mono_comp_exp_dns_semilog.png',
+fig.tight_layout(pad=0.01)
+# plt.savefig('vel_mono_comp_exp_dns.png',
+#             dpi=1000,
 #             format='png')
