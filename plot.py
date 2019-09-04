@@ -28,6 +28,18 @@ UP_ExpA3 = np.loadtxt("graficos_artigo/vel_pang_alfa0.1_d0.5.csv",
                       delimiter=' ')
 UP_ExpA3[:,0] = -1*(UP_ExpA3[:,0]-300)  #'Right side' of data has better results near the wall
                                         # changed '0-300' to '300-0'
+uP_ExpA3 = np.loadtxt("graficos_artigo/u_rms_alfa0.1_d0.5_bif.csv",
+                      dtype=float,
+                      skiprows=0,
+                      delimiter=' ')
+uP_ExpA3[:,0] = -1*(uP_ExpA3[:,0]-300)  #'Right side' of data has better results near the wall
+                                        # changed '0-300' to '300-0'
+vP_ExpA3 = np.loadtxt("graficos_artigo/v_rms_alfa0.1_d0.5_bif.csv",
+                      dtype=float,
+                      skiprows=0,
+                      delimiter=' ')
+vP_ExpA3[:,0] = -1*(vP_ExpA3[:,0]-300)  #'Right side' of data has better results near the wall
+                                        # changed '0-300' to '300-0'
 
 ### Single-phase flow - DNS
 #Giusti et al. (2005)
@@ -122,12 +134,56 @@ wP_0 = np.loadtxt("graficos_artigo/w_rms_mono_128_dt10(-4)_novo_180000.curve",
                   delimiter=' ')
 wP_0[:,0] = wP_0[:,0]*0.0302353/(0.001/1000)
 wP_0[:,1] = wP_0[:,1]/0.0302353
+
+UP_A1 = np.loadtxt("graficos_artigo/u_average_alfa_0.1_d0.1_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+UP_A1[:,0] = UP_A1[:,0]*0.0302353/(0.001/1000)
+UP_A1[:,1] = UP_A1[:,1]/0.0302353
+UP_A2 = np.loadtxt("graficos_artigo/u_average_alfa_0.1_d0.2_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+UP_A2[:,0] = UP_A2[:,0]*0.0302353/(0.001/1000)
+UP_A2[:,1] = UP_A2[:,1]/0.0302353
 UP_A3 = np.loadtxt("graficos_artigo/u_average_bif_alfa0.1_d0.5_172000.curve",
                    dtype=float,
                    skiprows=2,
                    delimiter=' ')
 UP_A3[:,0] = UP_A3[:,0]*0.0302353/(0.001/1000)
 UP_A3[:,1] = UP_A3[:,1]/0.0302353
+UP_B1 = np.loadtxt("graficos_artigo/u_average_bif_alfa0.5_d0.1_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+UP_B1[:,0] = UP_B1[:,0]*0.0302353/(0.001/1000)
+UP_B1[:,1] = UP_B1[:,1]/0.0302353
+UP_B2 = np.loadtxt("graficos_artigo/u_average_bif_alfa0.5_d0.2_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+UP_B2[:,0] = UP_B2[:,0]*0.0302353/(0.001/1000)
+UP_B2[:,1] = UP_B2[:,1]/0.0302353
+UP_B3 = np.loadtxt("graficos_artigo/u_average_bif_alfa0.5_d0.5_195000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+UP_B3[:,0] = UP_B3[:,0]*0.0302353/(0.001/1000)
+UP_B3[:,1] = UP_B3[:,1]/0.0302353
+
+uP_A3 = np.loadtxt("graficos_artigo/u_rms_bif_alfa0.1_d0.5_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+uP_A3[:,0] = uP_A3[:,0]*0.0302353/(0.001/1000)
+uP_A3[:,1] = uP_A3[:,1]/0.0302353
+vP_A3 = np.loadtxt("graficos_artigo/v_rms_alfa0.1_d0.5_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+vP_A3[:,0] = vP_A3[:,0]*0.0302353/(0.001/1000)
+vP_A3[:,1] = vP_A3[:,1]/0.0302353
 
 ### ###
 
@@ -193,8 +249,8 @@ ax[0].axis([0.0, 150.0, 0.0, 3.0])
 ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
 ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
 #
-ax[0].yaxis.set_major_locator(plt.MultipleLocator(0.5))
-ax[0].yaxis.set_minor_locator(plt.MultipleLocator(0.25))
+ax[0].yaxis.set_major_locator(plt.MultipleLocator(1.0))
+ax[0].yaxis.set_minor_locator(plt.MultipleLocator(0.5))
 ax[0].scatter(uP_Exp0[:,0], uP_Exp0[:,1],
               s=25,
               c='white',
@@ -257,8 +313,8 @@ ax[1].plot(vP_Pa[:,0], vP_Pa[:,1],
            linestyle= ':')
 #
 ax[2].set_ylim([0.0, 1.2])
-ax[2].yaxis.set_major_locator(plt.MultipleLocator(0.5))
-ax[2].yaxis.set_minor_locator(plt.MultipleLocator(0.25))
+ax[2].yaxis.set_major_locator(plt.MultipleLocator(0.6))
+ax[2].yaxis.set_minor_locator(plt.MultipleLocator(0.3))
 ax[2].plot(wP_0[:,0], wP_0[:,1],
            label='Present work',
            color='black',
@@ -286,7 +342,7 @@ fig.tight_layout(pad=0.01)
 #             format='png')
 ###
 
-### FIGURE TWO-PHASE - MEAN VELOCITY
+### FIGURE TWO-PHASE - MEAN VELOCITY (VALIDATION)
 plt.style.use(os.path.join(os.environ['HOME'],
                            'Templates',
                            'matplotlib',
@@ -317,3 +373,150 @@ fig.tight_layout(pad=0.01)
 #             dpi=1000,
 #             format='png')
 ###
+
+### FIGURE TWO-PHASE - RMS VELOCITY (VALIDATION)
+plt.style.use(os.path.join(os.environ['HOME'],
+                           'Templates',
+                           'matplotlib',
+                           'singleColumn.mplstyle'))
+fig, ax = plt.subplots()
+ax.set_xlabel(r'$y^{+}$')
+ax.set_ylabel(r'$u^{+}_{rms}, v^{+}_{rms}$')
+ax.axis([0.0, 150.0, 0.0, 2.5])
+ax.xaxis.set_major_locator(plt.MultipleLocator(30))
+ax.xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax.yaxis.set_major_locator(plt.MultipleLocator(0.5))
+ax.yaxis.set_minor_locator(plt.MultipleLocator(0.25))
+ax.scatter(uP_ExpA3[:,0], uP_ExpA3[:,1],
+           s=25,
+           c='white',
+           marker='o',
+           edgecolors='black',
+           linewidths='1',
+           label='$u^{+}_{rms}$ Pang and Wei (2013)')
+ax.scatter(vP_ExpA3[:,0], vP_ExpA3[:,1],
+           s=25,
+           c='white',
+           marker='s',
+           edgecolors='black',
+           linewidths='1',
+           label='$v^{+}_{rms}$ Pang and Wei (2013)')
+ax.plot(uP_A3[:,0], uP_A3[:,1],
+        label='$u^{+}_{rms}$ Present work',
+        color='black',
+        linewidth=1,
+        linestyle='-')
+ax.plot(vP_A3[:,0], vP_A3[:,1],
+        label='$v^{+}_{rms}$ Present work',
+        color='black',
+        linewidth=1,
+        linestyle='-.')
+ax.legend(loc='best')
+fig.tight_layout(pad=0.01)
+# plt.savefig('vel_mono_comp_exp_dns.png',
+#             dpi=1000,
+#             format='png')
+###
+
+### FIGURE TWO-PHASE - MEAN VELOCITY (ALL CASES)
+plt.style.use(os.path.join(os.environ['HOME'],
+                           'Templates',
+                           'matplotlib',
+                           'tiny.mplstyle'))
+fig, ax = plt.subplots(1, 2,
+                       figsize=(5.5,1.9),
+                       sharey=True)
+ax[0].set_xlabel(r'$y^{+}$')
+ax[0].set_ylabel(r'$\overline{u}^{+}$')
+ax[0].axis([0, 150.0, 0.0, 20.0])
+ax[0].yaxis.set_major_locator(plt.MultipleLocator(4))
+ax[0].yaxis.set_minor_locator(plt.MultipleLocator(1))
+#
+ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
+ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax[0].plot(UP_0[:,0], UP_0[:,1],
+           label='Single-phase',
+           color='black',
+           linewidth=1,
+           linestyle='-')
+ax[0].plot(UP_A1[:,0], UP_A1[:,1],
+           label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle='-.')
+ax[0].plot(UP_A2[:,0], UP_A2[:,1],
+           label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle='--')
+ax[0].plot(UP_A3[:,0], UP_A3[:,1],
+           label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle=':')
+ax[0].plot(UP_B1[:,0], UP_B1[:,1],
+           label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle='-.')
+ax[0].plot(UP_B2[:,0], UP_B2[:,1],
+           label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle='--')
+ax[0].plot(UP_B3[:,0], UP_B3[:,1],
+           label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle=':')
+ax[0].legend(loc='best')
+#
+ax[1].axis([0.1, 150.0, 0.0, 20.0])
+ax[1].semilogx(UP_0[:,0], UP_0[:,1],
+               label='Single-phase',
+               color='black',
+               linewidth=1,
+               linestyle='-')
+ax[1].semilogx(UP_A1[:,0], UP_A1[:,1],
+               label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+               color='black',
+               linewidth=1,
+               linestyle='-.')
+ax[1].semilogx(UP_A2[:,0], UP_A2[:,1],
+               label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+               color='black',
+               linewidth=1,
+               linestyle='--')
+ax[1].semilogx(UP_A3[:,0], UP_A3[:,1],
+               label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+               color='black',
+               linewidth=1,
+               linestyle=':')
+ax[1].semilogx(UP_B1[:,0], UP_B1[:,1],
+               label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+               color='gray',
+               linewidth=1,
+               linestyle='-.')
+ax[1].semilogx(UP_B2[:,0], UP_B2[:,1],
+               label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+               color='gray',
+               linewidth=1,
+               linestyle='--')
+ax[1].semilogx(UP_B3[:,0], UP_B3[:,1],
+               label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+               color='gray',
+               linewidth=1,
+               linestyle=':')
+ax[1].annotate('I', (0.7, 18), size='8')
+ax[1].annotate('II', (11, 18), size='8')
+ax[1].annotate('III', (34, 2), size='8')
+ax[1].annotate('IV', (79, 2), size='8')
+ax[1].vlines((5,30,50),0,20)
+#
+fig.tight_layout(pad=0.01,h_pad=5.0) #VERIFY H_PAD, PLOT ZOOM?, GRAY VLINES, PLOT SEMILOG UP TO 30 ONLY?
+plt.savefig('test.png',
+            dpi=1000,
+            format='png')
+###
+#Escrevendo no gráfico
+
