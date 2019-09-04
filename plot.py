@@ -185,6 +185,80 @@ vP_A3 = np.loadtxt("graficos_artigo/v_rms_alfa0.1_d0.5_172000.curve",
 vP_A3[:,0] = vP_A3[:,0]*0.0302353/(0.001/1000)
 vP_A3[:,1] = vP_A3[:,1]/0.0302353
 
+cB_A1 = np.loadtxt("graficos_artigo/volfrac_alfa_0.1_d0.1_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+cB_A1[:,0] = cB_A1[:,0]*0.0302353/(0.001/1000)
+cB_A1[:,1] = cB_A1[:,1]*100
+cB_A2 = np.loadtxt("graficos_artigo/volfrac_alfa_0.1_d0.2_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+cB_A2[:,0] = cB_A2[:,0]*0.0302353/(0.001/1000)
+cB_A2[:,1] = cB_A2[:,1]*100
+cB_A3 = np.loadtxt("graficos_artigo/volfrac_alfa0.1_d0.5_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+cB_A3[:,0] = cB_A3[:,0]*0.0302353/(0.001/1000)
+cB_A3[:,1] = cB_A3[:,1]*100
+cB_B1 = np.loadtxt("graficos_artigo/volfrac_alfa0.5_d0.1_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+cB_B1[:,0] = cB_B1[:,0]*0.0302353/(0.001/1000)
+cB_B1[:,1] = cB_B1[:,1]*100
+cB_B2 = np.loadtxt("graficos_artigo/vol_frac_alfa0.5_d0.2_180000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+cB_B2[:,0] = cB_B2[:,0]*0.0302353/(0.001/1000)
+cB_B2[:,1] = cB_B2[:,1]*100
+cB_B3 = np.loadtxt("graficos_artigo/volfrac_alfa0.5_d0.5_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+cB_B3[:,0] = cB_B3[:,0]*0.0302353/(0.001/1000)
+cB_B3[:,1] = cB_B3[:,1]*100
+
+UP_B_A1 = np.loadtxt("graficos_artigo/u_bolha_average_alfa_0.1_d0.1_172000.curve",
+                     dtype=float,
+                     skiprows=2,
+                     delimiter=' ')
+UP_B_A1[:,0] = UP_B_A1[:,0]*0.0302353/(0.001/1000)
+UP_B_A1[:,1] = UP_B_A1[:,1]/0.0302353
+UP_B_A2 = np.loadtxt("graficos_artigo/u_bolha_average_alfa_0.1_d0.2_172000.curve",
+                     dtype=float,
+                     skiprows=2,
+                     delimiter=' ')
+UP_B_A2[:,0] = UP_B_A2[:,0]*0.0302353/(0.001/1000)
+UP_B_A2[:,1] = UP_B_A2[:,1]/0.0302353
+UP_B_A3 = np.loadtxt("graficos_artigo/u_bolha_average_bif_alfa0.1_d0.5_172000.curve",
+                     dtype=float,
+                     skiprows=2,
+                     delimiter=' ')
+UP_B_A3[:,0] = UP_B_A3[:,0]*0.0302353/(0.001/1000)
+UP_B_A3[:,1] = UP_B_A3[:,1]/0.0302353
+UP_B_B1 = np.loadtxt("graficos_artigo/u_bolha_average_bif_alfa0.5_d0.1_172000.curve",
+                     dtype=float,
+                     skiprows=2,
+                     delimiter=' ')
+UP_B_B1[:,0] = UP_B_B1[:,0]*0.0302353/(0.001/1000)
+UP_B_B1[:,1] = UP_B_B1[:,1]/0.0302353
+UP_B_B2 = np.loadtxt("graficos_artigo/u_bolha_average_bif_alfa0.5_d0.2_180000.curve",
+                     dtype=float,
+                     skiprows=2,
+                     delimiter=' ')
+UP_B_B2[:,0] = UP_B_B2[:,0]*0.0302353/(0.001/1000)
+UP_B_B2[:,1] = UP_B_B2[:,1]/0.0302353
+UP_B_B3 = np.loadtxt("graficos_artigo/u_bolha_average_bif_alfa0.5_d0.5_172000.curve",
+                     dtype=float,
+                     skiprows=2,
+                     delimiter=' ')
+UP_B_B3[:,0] = UP_B_B3[:,0]*0.0302353/(0.001/1000)
+UP_B_B3[:,1] = UP_B_B3[:,1]/0.0302353
+
 ### ###
 
 
@@ -230,9 +304,9 @@ ax.plot(UP_Pa[:,0], UP_Pa[:,1],
         linestyle= ':')
 ax.legend(loc='lower right')
 fig.tight_layout(pad=0.01)
-# plt.savefig('vel_mono_comp_exp_dns.png',
-#             dpi=1000,
-#             format='png')
+plt.savefig('velFluid_singlePhaseValidation.png',
+            dpi=1000,
+            format='png')
 ###
 
 
@@ -337,10 +411,11 @@ ax[2].plot(wP_Pa[:,0], wP_Pa[:,1],
            linestyle= ':')
 #
 fig.tight_layout(pad=0.01)
-# plt.savefig('velRMS_mono_comp_exp_dns.png',
-#             dpi=1000,
-#             format='png')
+plt.savefig('velFluid_RMS_singlePhaseValidation.png',
+            dpi=1000,
+            format='png')
 ###
+
 
 ### FIGURE TWO-PHASE - MEAN VELOCITY (VALIDATION)
 plt.style.use(os.path.join(os.environ['HOME'],
@@ -369,9 +444,9 @@ ax.plot(UP_A3[:,0], UP_A3[:,1],
         linestyle='-')
 ax.legend(loc='best')
 fig.tight_layout(pad=0.01)
-# plt.savefig('vel_mono_comp_exp_dns.png',
-#             dpi=1000,
-#             format='png')
+plt.savefig('velFluid_twoPhaseValidation.png',
+            dpi=1000,
+            format='png')
 ###
 
 ### FIGURE TWO-PHASE - RMS VELOCITY (VALIDATION)
@@ -413,18 +488,18 @@ ax.plot(vP_A3[:,0], vP_A3[:,1],
         linestyle='-.')
 ax.legend(loc='best')
 fig.tight_layout(pad=0.01)
-# plt.savefig('vel_mono_comp_exp_dns.png',
-#             dpi=1000,
-#             format='png')
+plt.savefig('velFluid_RMS_twoPhaseValidation.png',
+            dpi=1000,
+            format='png')
 ###
 
 ### FIGURE TWO-PHASE - MEAN VELOCITY (ALL CASES)
 plt.style.use(os.path.join(os.environ['HOME'],
                            'Templates',
                            'matplotlib',
-                           'tiny.mplstyle'))
+                           'singleColumn.mplstyle'))
 fig, ax = plt.subplots(1, 2,
-                       figsize=(5.5,1.9),
+                       figsize=(7.0,2.5),
                        sharey=True)
 ax[0].set_xlabel(r'$y^{+}$')
 ax[0].set_ylabel(r'$\overline{u}^{+}$')
@@ -469,7 +544,6 @@ ax[0].plot(UP_B3[:,0], UP_B3[:,1],
            color='gray',
            linewidth=1,
            linestyle=':')
-ax[0].legend(loc='best')
 #
 ax[1].axis([0.1, 150.0, 0.0, 20.0])
 ax[1].semilogx(UP_0[:,0], UP_0[:,1],
@@ -507,16 +581,200 @@ ax[1].semilogx(UP_B3[:,0], UP_B3[:,1],
                color='gray',
                linewidth=1,
                linestyle=':')
-ax[1].annotate('I', (0.7, 18), size='8')
-ax[1].annotate('II', (11, 18), size='8')
-ax[1].annotate('III', (34, 2), size='8')
-ax[1].annotate('IV', (79, 2), size='8')
-ax[1].vlines((5,30,50),0,20)
+ax[1].annotate('I', (0.7, 4), size='6')
+ax[1].annotate('II', (11, 4), size='6')
+ax[1].annotate('III', (34, 4), size='6')
+ax[1].annotate('IV', (79, 4), size='6')
+ax[1].vlines((5,30,50),0,20,lw=0.5)
+ax[1].legend(loc='best',
+             fontsize=6.5)
 #
-fig.tight_layout(pad=0.01,h_pad=5.0) #VERIFY H_PAD, PLOT ZOOM?, GRAY VLINES, PLOT SEMILOG UP TO 30 ONLY?
-plt.savefig('test.png',
+fig.tight_layout(pad=0.01)#,h_pad=5.0) #VERIFY H_PAD, PLOT ZOOM?
+plt.savefig('velFluid_comparisons.png',
             dpi=1000,
             format='png')
 ###
-#Escrevendo no gráfico
 
+### FIGURE TWO-PHASE - BUBLE CONCENTRATION
+plt.style.use(os.path.join(os.environ['HOME'],
+                           'Templates',
+                           'matplotlib',
+                           'singleColumn.mplstyle'))
+fig, ax = plt.subplots(1, 2,
+                       figsize=(7.0,2.5),
+                       sharey=True)
+ax[0].set_xlabel(r'$y^{+}$')
+ax[0].set_ylabel('$\\alpha$ (\\%)')
+ax[0].axis([0, 150.0, 0.0, 1.0])
+ax[0].yaxis.set_major_locator(plt.MultipleLocator(0.2))
+ax[0].yaxis.set_minor_locator(plt.MultipleLocator(0.1))
+#
+ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
+ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax[0].plot(cB_A1[:,0], cB_A1[:,1],
+           label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle='-.')
+ax[0].plot(cB_A2[:,0], cB_A2[:,1],
+           label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle='--')
+ax[0].plot(cB_A3[:,0], cB_A3[:,1],
+           label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle=':')
+ax[0].plot(cB_B1[:,0], cB_B1[:,1],
+           label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle='-.')
+ax[0].plot(cB_B2[:,0], cB_B2[:,1],
+           label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle='--')
+ax[0].plot(cB_B3[:,0], cB_B3[:,1],
+           label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle=':')
+#
+ax[1].axis([0.9, 150.0, 0.0, 1.0])
+ax[1].semilogx(cB_A1[:,0], cB_A1[:,1],
+               label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+               color='black',
+               linewidth=1,
+               linestyle='-.')
+ax[1].semilogx(cB_A2[:,0], cB_A2[:,1],
+               label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+               color='black',
+               linewidth=1,
+               linestyle='--')
+ax[1].semilogx(cB_A3[:,0], cB_A3[:,1],
+               label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+               color='black',
+               linewidth=1,
+               linestyle=':')
+ax[1].semilogx(cB_B1[:,0], cB_B1[:,1],
+               label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+               color='gray',
+               linewidth=1,
+               linestyle='-.')
+ax[1].semilogx(cB_B2[:,0], cB_B2[:,1],
+               label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+               color='gray',
+               linewidth=1,
+               linestyle='--')
+ax[1].semilogx(cB_B3[:,0], cB_B3[:,1],
+               label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+               color='gray',
+               linewidth=1,
+               linestyle=':')
+ax[1].annotate('I', (2.5, 0.75), size='6')
+ax[1].annotate('II', (11, 0.75), size='6')
+ax[1].annotate('III', (34, 0.75), size='6')
+ax[1].annotate('IV', (79, 0.75), size='6')
+ax[1].vlines((5,30,50),0,1,lw=0.5)
+# ax[1].legend(loc='best',
+#              fontsize=6.5)
+#
+fig.tight_layout(pad=0.01) #VERIFY H_PAD, PLOT ZOOM?
+plt.savefig('concBubble_comparisons.png',
+            dpi=1000,
+            format='png')
+###
+
+### FIGURE TWO-PHASE - MEAN BUBBLE VELOCITY (ALL CASES)
+plt.style.use(os.path.join(os.environ['HOME'],
+                           'Templates',
+                           'matplotlib',
+                           'singleColumn.mplstyle'))
+fig, ax = plt.subplots(1, 2,
+                       figsize=(7.0,2.5),
+                       sharey=True)
+ax[0].set_xlabel(r'$y^{+}$')
+ax[0].set_ylabel(r'$\overline{u}^{+}$')
+ax[0].axis([0, 150.0, 0.0, 20.0])
+ax[0].yaxis.set_major_locator(plt.MultipleLocator(4))
+ax[0].yaxis.set_minor_locator(plt.MultipleLocator(1))
+#
+ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
+ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax[0].plot(UP_B_A1[:,0], UP_B_A1[:,1],
+           label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle='-.')
+ax[0].plot(UP_B_A2[:,0], UP_B_A2[:,1],
+           label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle='--')
+ax[0].plot(UP_B_A3[:,0], UP_B_A3[:,1],
+           label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle=':')
+ax[0].plot(UP_B_B1[:,0], UP_B_B1[:,1],
+           label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle='-.')
+ax[0].plot(UP_B_B2[:,0], UP_B_B2[:,1],
+           label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle='--')
+ax[0].plot(UP_B_B3[:,0], UP_B_B3[:,1],
+           label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle=':')
+#
+ax[1].axis([0.9, 150.0, 0.0, 20.0])
+ax[1].semilogx(UP_B_A1[:,0], UP_B_A1[:,1],
+               label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+               color='black',
+               linewidth=1,
+               linestyle='-.')
+ax[1].semilogx(UP_B_A2[:,0], UP_B_A2[:,1],
+               label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+               color='black',
+               linewidth=1,
+               linestyle='--')
+ax[1].semilogx(UP_B_A3[:,0], UP_B_A3[:,1],
+               label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+               color='black',
+               linewidth=1,
+               linestyle=':')
+ax[1].semilogx(UP_B_B1[:,0], UP_B_B1[:,1],
+               label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+               color='gray',
+               linewidth=1,
+               linestyle='-.')
+ax[1].semilogx(UP_B_B2[:,0], UP_B_B2[:,1],
+               label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+               color='gray',
+               linewidth=1,
+               linestyle='--')
+ax[1].semilogx(UP_B_B3[:,0], UP_B_B3[:,1],
+               label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+               color='gray',
+               linewidth=1,
+               linestyle=':')
+ax[1].annotate('I', (2.5, 4), size='6')
+ax[1].annotate('II', (11, 4), size='6')
+ax[1].annotate('III', (34, 4), size='6')
+ax[1].annotate('IV', (79, 4), size='6')
+ax[1].vlines((5,30,50),0,20,lw=0.5)
+ax[1].legend(loc='best',
+             fontsize=6.5)
+#
+fig.tight_layout(pad=0.01)#,h_pad=5.0) #VERIFY H_PAD, PLOT ZOOM?
+plt.savefig('velBubble_comparisons.png',
+            dpi=1000,
+            format='png')
+###
