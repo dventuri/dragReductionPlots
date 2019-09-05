@@ -500,18 +500,16 @@ plt.savefig('velFluid_RMS_twoPhaseValidation.pdf',
 
 
 ### FIGURE TWO-PHASE - MEAN VELOCITY (ALL CASES)
-plt.style.use('singleColumn.mplstyle')
-fig, ax = plt.subplots(1, 2,
-                       figsize=(7.0,2.5),
-                       sharey=True)
+plt.style.use('twoSingleColumn.mplstyle')
+fig, ax = plt.subplots(1, 2)
+#
+ax[0].axis([0, 150.0, 0.0, 20.0])
 ax[0].set_xlabel(r'$y^{+}$')
 ax[0].set_ylabel(r'$\overline{u}^{+}$')
-ax[0].axis([0, 150.0, 0.0, 20.0])
-ax[0].yaxis.set_major_locator(plt.MultipleLocator(4))
-ax[0].yaxis.set_minor_locator(plt.MultipleLocator(1))
-#
 ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
 ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax[0].yaxis.set_major_locator(plt.MultipleLocator(4))
+ax[0].yaxis.set_minor_locator(plt.MultipleLocator(1))
 ax[0].plot(UP_0[:,0], UP_0[:,1],
            label='Single-phase',
            color='black',
@@ -548,7 +546,11 @@ ax[0].plot(UP_B3[:,0], UP_B3[:,1],
            linewidth=1,
            linestyle=':')
 #
+ax[1].set_xlabel(r'$y^{+}$')
+ax[1].set_ylabel(r'$\overline{u}^{+}$')
 ax[1].axis([0.1, 150.0, 0.0, 20.0])
+ax[1].yaxis.set_major_locator(plt.MultipleLocator(4))
+ax[1].yaxis.set_minor_locator(plt.MultipleLocator(1))
 ax[1].semilogx(UP_0[:,0], UP_0[:,1],
                label='Single-phase',
                color='black',
@@ -592,26 +594,24 @@ ax[1].vlines((5,30,50),0,20,lw=0.5)
 ax[1].legend(loc='best',
              fontsize=6.5)
 #
-fig.tight_layout(pad=0.01)#,h_pad=5.0) #VERIFY H_PAD, PLOT ZOOM?
+fig.tight_layout(pad=0.01)
 plt.savefig('velFluid_comparisons.pdf',
             format='pdf')
-plt.savefig('velFluid_comparisons.tiff',
-            dpi=1000,
-            format='tiff')
+# plt.savefig('velFluid_comparisons.tiff',
+#             dpi=1000,
+#             format='tiff')
 ###
 
 
 ### FIGURE TWO-PHASE - BUBLE CONCENTRATION
-plt.style.use('singleColumn.mplstyle')
-fig, ax = plt.subplots(1, 2,
-                       figsize=(7.0,2.5),
-                       sharey=True)
+plt.style.use('twoSingleColumn.mplstyle')
+fig, ax = plt.subplots(1, 2)
+#
 ax[0].set_xlabel(r'$y^{+}$')
-ax[0].set_ylabel('$\\alpha$ (\\%)')
+ax[0].set_ylabel('$\\alpha$ (%)')
 ax[0].axis([0, 150.0, 0.0, 1.0])
 ax[0].yaxis.set_major_locator(plt.MultipleLocator(0.2))
 ax[0].yaxis.set_minor_locator(plt.MultipleLocator(0.1))
-#
 ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
 ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
 ax[0].plot(cB_A1[:,0], cB_A1[:,1],
@@ -645,7 +645,11 @@ ax[0].plot(cB_B3[:,0], cB_B3[:,1],
            linewidth=1,
            linestyle=':')
 #
+ax[1].set_xlabel(r'$y^{+}$')
+ax[1].set_ylabel('$\\alpha$ (%)')
 ax[1].axis([0.9, 150.0, 0.0, 1.0])
+ax[1].yaxis.set_major_locator(plt.MultipleLocator(0.2))
+ax[1].yaxis.set_minor_locator(plt.MultipleLocator(0.1))
 ax[1].semilogx(cB_A1[:,0], cB_A1[:,1],
                label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
                color='black',
@@ -687,23 +691,21 @@ ax[1].vlines((5,30,50),0,1,lw=0.5)
 fig.tight_layout(pad=0.01) #VERIFY H_PAD, PLOT ZOOM?
 plt.savefig('concBubble_comparisons.pdf',
             format='pdf')
-plt.savefig('concBubble_comparisons.tiff',
-            dpi=1000,
-            format='tiff')
+# plt.savefig('concBubble_comparisons.tiff',
+#             dpi=1000,
+#             format='tiff')
 ###
 
 
 ### FIGURE TWO-PHASE - MEAN BUBBLE VELOCITY (ALL CASES)
-plt.style.use('singleColumn.mplstyle')
-fig, ax = plt.subplots(1, 2,
-                       figsize=(7.0,2.5),
-                       sharey=True)
+plt.style.use('twoSingleColumn.mplstyle')
+fig, ax = plt.subplots(1, 2)
+#
 ax[0].set_xlabel(r'$y^{+}$')
 ax[0].set_ylabel(r'$\overline{u}^{+}$')
 ax[0].axis([0, 150.0, 0.0, 20.0])
 ax[0].yaxis.set_major_locator(plt.MultipleLocator(4))
 ax[0].yaxis.set_minor_locator(plt.MultipleLocator(1))
-#
 ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
 ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
 ax[0].plot(UP_B_A1[:,0], UP_B_A1[:,1],
@@ -737,7 +739,13 @@ ax[0].plot(UP_B_B3[:,0], UP_B_B3[:,1],
            linewidth=1,
            linestyle=':')
 #
+ax[1].set_xlabel(r'$y^{+}$')
+ax[1].set_ylabel(r'$\overline{u}^{+}$')
 ax[1].axis([0.9, 150.0, 0.0, 20.0])
+ax[1].yaxis.set_major_locator(plt.MultipleLocator(4))
+ax[1].yaxis.set_minor_locator(plt.MultipleLocator(1))
+ax[1].xaxis.set_major_locator(plt.MultipleLocator(30))
+ax[1].xaxis.set_minor_locator(plt.MultipleLocator(10))
 ax[1].semilogx(UP_B_A1[:,0], UP_B_A1[:,1],
                label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
                color='black',
