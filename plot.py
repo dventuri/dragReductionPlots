@@ -272,46 +272,99 @@ UP_B_B3[:,1] = UP_B_B3[:,1]/0.0302353
 
 
 ### FIGURE SINGLE-PHASE - MEAN VELOCITY
-plt.style.use('singleColumn.mplstyle')
-fig, ax = plt.subplots()
-ax.set_xlabel(r'$y^{+}$')
-ax.set_ylabel(r'$u^{+}$')
-ax.axis([0.0, 150.0, 0.0, 20.0])
-ax.xaxis.set_major_locator(plt.MultipleLocator(30))
-ax.xaxis.set_minor_locator(plt.MultipleLocator(10))
-ax.yaxis.set_major_locator(plt.MultipleLocator(4))
-ax.yaxis.set_minor_locator(plt.MultipleLocator(1))
-ax.scatter(UP_Exp0[:,0], UP_Exp0[:,1],
-           s=25,
-           c='white',
-           marker='o',
-           edgecolors='black',
-           linewidths='1',
-           label='Pang and Wei (2013)')
-ax.plot(UP_0[:,0], UP_0[:,1],
-        label='Present work',
-        color='black',
-        linewidth=1,
-        linestyle='-')
-ax.plot(UP_Gi[:,0], UP_Gi[:,1],
-        label='Giusti et al. (2005)',
-        color='black',
-        linewidth=1,
-        linestyle= '-.')
-ax.plot(UP_YK[:,0], UP_YK[:,1],
-        label='Yu e Kawaguchi (2004)',
-        color='black',
-        linewidth=1,
-        linestyle= '--')
-ax.plot(UP_Pa[:,0], UP_Pa[:,1],
-        label='Pang et al. (2014)',
-        color='black',
-        linewidth=1,
-        linestyle= ':')
-ax.legend(loc='lower right')
+plt.style.use('twoSingleColumn.mplstyle')
+fig, ax = plt.subplots(1, 2)
+#
+ax[0].set_xlabel(r'$y^{+}$')
+ax[0].set_ylabel(r'$u^{+}$')
+ax[0].axis([0.0, 150.0, 0.0, 20.0])
+ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
+ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax[0].yaxis.set_major_locator(plt.MultipleLocator(4))
+ax[0].yaxis.set_minor_locator(plt.MultipleLocator(1))
+ax[0].scatter(UP_Exp0[:,0], UP_Exp0[:,1],
+              s=25,
+              c='white',
+              marker='o',
+              edgecolors='black',
+              linewidths='1',
+              label='Pang and Wei (2013)')
+ax[0].plot(UP_0[:,0], UP_0[:,1],
+           label='Present work',
+           color='black',
+           linewidth=1,
+           linestyle='-')
+ax[0].plot(UP_Gi[:,0], UP_Gi[:,1],
+           label='Giusti et al. (2005)',
+           color='black',
+           linewidth=1,
+           linestyle= '-.')
+ax[0].plot(UP_YK[:,0], UP_YK[:,1],
+           label='Yu e Kawaguchi (2004)',
+           color='black',
+           linewidth=1,
+           linestyle= '--')
+ax[0].plot(UP_Pa[:,0], UP_Pa[:,1],
+           label='Pang et al. (2014)',
+           color='black',
+           linewidth=1,
+           linestyle= ':')
+ax[0].legend(loc='lower right')
+#
+ax[1].set_xlabel(r'$y^{+}$')
+ax[1].set_ylabel(r'$u^{+}$')
+ax[1].axis([1.0, 150.0, 0.0, 20.0])
+ax[1].xaxis.set_major_locator(plt.MultipleLocator(30))
+ax[1].xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax[1].yaxis.set_major_locator(plt.MultipleLocator(4))
+ax[1].yaxis.set_minor_locator(plt.MultipleLocator(1))
+ax[1].scatter(UP_Exp0[:,0], UP_Exp0[:,1],
+              s=25,
+              c='white',
+              marker='o',
+              edgecolors='black',
+              linewidths='1',
+              label='Pang and Wei (2013)')
+ax[1].semilogx(UP_0[:,0], UP_0[:,1],
+               label='Present work',
+               color='black',
+               linewidth=1,
+               linestyle='-')
+ax[1].semilogx(UP_Gi[:,0], UP_Gi[:,1],
+               label='Giusti et al. (2005)',
+               color='black',
+               linewidth=1,
+               linestyle= '-.')
+ax[1].semilogx(UP_YK[:,0], UP_YK[:,1],
+               label='Yu e Kawaguchi (2004)',
+               color='black',
+               linewidth=1,
+               linestyle= '--')
+ax[1].semilogx(UP_Pa[:,0], UP_Pa[:,1],
+               label='Pang et al. (2014)',
+               color='black',
+               linewidth=1,
+               linestyle= ':')
+ax[1].plot(np.linspace(1,13), np.linspace(1,13),
+        #    label='Pang et al. (2014)',
+           color='gray',
+           linewidth=1,
+           linestyle= '-')
+ax[1].plot(np.linspace(8,150), 2.5*np.log(np.linspace(8,150))+5.0,
+        #    label='Pang et al. (2014)',
+           color='gray',
+           linewidth=1,
+           linestyle= '-')
+ax[1].annotate(r'$u^{+} = y^{+}$',(6.98,7),(1.1,7),
+               arrowprops=dict(facecolor='black',
+               arrowstyle='->'))
+ax[1].annotate(r'$u^{+} = 2.5*\ln{y^{+}}+5$',(15,11.8),(8,18),
+               arrowprops=dict(facecolor='black',
+               arrowstyle='->'))
+#
 fig.tight_layout(pad=0.01)
 plt.savefig('velFluid_singlePhaseValidation.pdf',
-            format='pdf')
+                  format='pdf')
 # plt.savefig('velFluid_singlePhaseValidation.tiff',
 #             dpi=1000,
 #             format='tiff')
