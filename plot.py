@@ -9,6 +9,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1.inset_locator import zoomed_inset_axes
+from mpl_toolkits.axes_grid1.inset_locator import mark_inset
 plt.style.use('default')
 
 
@@ -423,7 +424,7 @@ plt.savefig('velFluid_RMS_singlePhaseValidation.pdf',
 ###
 
 
-### FIGURE TWO-PHASE - MEAN VELOCITY (VALIDATION)
+### FIGURE TWO-PHASE - FLUID MEAN VELOCITY (VALIDATION)
 plt.style.use('singleColumn.mplstyle')
 fig, ax = plt.subplots()
 ax.set_xlabel(r'$y^{+}$')
@@ -455,7 +456,7 @@ plt.savefig('velFluid_twoPhaseValidation.pdf',
 ###
 
 
-### FIGURE TWO-PHASE - RMS VELOCITY (VALIDATION)
+### FIGURE TWO-PHASE - FLUID RMS VELOCITY (VALIDATION)
 plt.style.use('singleColumn.mplstyle')
 fig, ax = plt.subplots()
 ax.set_xlabel(r'$y^{+}$')
@@ -499,7 +500,7 @@ plt.savefig('velFluid_RMS_twoPhaseValidation.pdf',
 ###
 
 
-### FIGURE TWO-PHASE - MEAN VELOCITY (ALL CASES)
+### FIGURE TWO-PHASE - FLUID MEAN VELOCITY (ALL CASES)
 plt.style.use('twoSingleColumn.mplstyle')
 fig, ax = plt.subplots(1, 2)
 #
@@ -545,6 +546,48 @@ ax[0].plot(UP_B3[:,0], UP_B3[:,1],
            color='gray',
            linewidth=1,
            linestyle=':')
+#
+axins = zoomed_inset_axes(ax[0], 2, loc='center right')
+axins.plot(UP_0[:,0], UP_0[:,1],
+           label='Single-phase',
+           color='black',
+           linewidth=1,
+           linestyle='-')
+axins.plot(UP_A1[:,0], UP_A1[:,1],
+           label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle='-.')
+axins.plot(UP_A2[:,0], UP_A2[:,1],
+           label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle='--')
+axins.plot(UP_A3[:,0], UP_A3[:,1],
+           label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle=':')
+axins.plot(UP_B1[:,0], UP_B1[:,1],
+           label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle='-.')
+axins.plot(UP_B2[:,0], UP_B2[:,1],
+           label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle='--')
+axins.plot(UP_B3[:,0], UP_B3[:,1],
+           label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle=':')
+axins.set_xlim(120, 150)
+axins.set_ylim(16.5, 20)
+axins.xaxis.set_visible(False)
+axins.yaxis.set_visible(False)
+mark_inset(ax[0], axins, loc1=1, loc2=2, fc="none", ec="0.5")
 #
 ax[1].set_xlabel(r'$y^{+}$')
 ax[1].set_ylabel(r'$\overline{u}^{+}$')
@@ -688,7 +731,7 @@ ax[1].vlines((5,30,50),0,1,lw=0.5)
 # ax[1].legend(loc='best',
 #              fontsize=6.5)
 #
-fig.tight_layout(pad=0.01) #VERIFY H_PAD, PLOT ZOOM?
+fig.tight_layout(pad=0.01)
 plt.savefig('concBubble_comparisons.pdf',
             format='pdf')
 # plt.savefig('concBubble_comparisons.tiff',
@@ -784,7 +827,7 @@ ax[1].vlines((5,30,50),0,20,lw=0.5)
 ax[1].legend(loc='best',
              fontsize=6.5)
 #
-fig.tight_layout(pad=0.01)#,h_pad=5.0) #VERIFY H_PAD, PLOT ZOOM?
+fig.tight_layout(pad=0.01)
 plt.savefig('velBubble_comparisons.pdf',
             format='pdf')
 # plt.savefig('velBubble_comparisons.tiff',
