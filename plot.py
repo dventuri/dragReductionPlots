@@ -1,6 +1,14 @@
+"""
+TODO:
+Insert zoom in fluid velocity (twophase)
+Add singlephase comparison in multiphase rms fluid velocity - validation (?)
+Add semilog plot together with fluid velocity validation singlephase
+"""
+
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits.axes_grid1.inset_locator import zoomed_inset_axes
 plt.style.use('default')
 
 
@@ -263,10 +271,7 @@ UP_B_B3[:,1] = UP_B_B3[:,1]/0.0302353
 
 
 ### FIGURE SINGLE-PHASE - MEAN VELOCITY
-plt.style.use(os.path.join(os.environ['HOME'],
-                           'Templates',
-                           'matplotlib',
-                           'singleColumn.mplstyle'))
+plt.style.use('singleColumn.mplstyle')
 fig, ax = plt.subplots()
 ax.set_xlabel(r'$y^{+}$')
 ax.set_ylabel(r'$u^{+}$')
@@ -304,17 +309,16 @@ ax.plot(UP_Pa[:,0], UP_Pa[:,1],
         linestyle= ':')
 ax.legend(loc='lower right')
 fig.tight_layout(pad=0.01)
-plt.savefig('velFluid_singlePhaseValidation.png',
-            dpi=1000,
-            format='png')
+plt.savefig('velFluid_singlePhaseValidation.pdf',
+            format='pdf')
+# plt.savefig('velFluid_singlePhaseValidation.tiff',
+#             dpi=1000,
+#             format='tiff')
 ###
 
 
 ### FIGURE SINGLE-PHASE - RMS VELOCITIES
-plt.style.use(os.path.join(os.environ['HOME'],
-                           'Templates',
-                           'matplotlib',
-                           'tiny.mplstyle'))
+plt.style.use('tiny.mplstyle')
 fig, ax = plt.subplots(1, 3,
                        figsize=(7.5,1.7),
                        sharex=True)
@@ -411,17 +415,16 @@ ax[2].plot(wP_Pa[:,0], wP_Pa[:,1],
            linestyle= ':')
 #
 fig.tight_layout(pad=0.01)
-plt.savefig('velFluid_RMS_singlePhaseValidation.png',
-            dpi=1000,
-            format='png')
+plt.savefig('velFluid_RMS_singlePhaseValidation.pdf',
+            format='pdf')
+# plt.savefig('velFluid_RMS_singlePhaseValidation.tiff',
+#             dpi=1000,
+#             format='tiff')
 ###
 
 
 ### FIGURE TWO-PHASE - MEAN VELOCITY (VALIDATION)
-plt.style.use(os.path.join(os.environ['HOME'],
-                           'Templates',
-                           'matplotlib',
-                           'singleColumn.mplstyle'))
+plt.style.use('singleColumn.mplstyle')
 fig, ax = plt.subplots()
 ax.set_xlabel(r'$y^{+}$')
 ax.set_ylabel(r'$u^{+}$')
@@ -444,16 +447,16 @@ ax.plot(UP_A3[:,0], UP_A3[:,1],
         linestyle='-')
 ax.legend(loc='best')
 fig.tight_layout(pad=0.01)
-plt.savefig('velFluid_twoPhaseValidation.png',
-            dpi=1000,
-            format='png')
+plt.savefig('velFluid_twoPhaseValidation.pdf',
+            format='pdf')
+# plt.savefig('velFluid_twoPhaseValidation.tiff',
+#             dpi=1000,
+#             format='tiff')
 ###
 
+
 ### FIGURE TWO-PHASE - RMS VELOCITY (VALIDATION)
-plt.style.use(os.path.join(os.environ['HOME'],
-                           'Templates',
-                           'matplotlib',
-                           'singleColumn.mplstyle'))
+plt.style.use('singleColumn.mplstyle')
 fig, ax = plt.subplots()
 ax.set_xlabel(r'$y^{+}$')
 ax.set_ylabel(r'$u^{+}_{rms}, v^{+}_{rms}$')
@@ -488,16 +491,16 @@ ax.plot(vP_A3[:,0], vP_A3[:,1],
         linestyle='-.')
 ax.legend(loc='best')
 fig.tight_layout(pad=0.01)
-plt.savefig('velFluid_RMS_twoPhaseValidation.png',
-            dpi=1000,
-            format='png')
+plt.savefig('velFluid_RMS_twoPhaseValidation.pdf',
+            format='pdf')
+# plt.savefig('velFluid_RMS_twoPhaseValidation.tiff',
+#             dpi=1000,
+#             format='tiff')
 ###
 
+
 ### FIGURE TWO-PHASE - MEAN VELOCITY (ALL CASES)
-plt.style.use(os.path.join(os.environ['HOME'],
-                           'Templates',
-                           'matplotlib',
-                           'singleColumn.mplstyle'))
+plt.style.use('singleColumn.mplstyle')
 fig, ax = plt.subplots(1, 2,
                        figsize=(7.0,2.5),
                        sharey=True)
@@ -590,16 +593,16 @@ ax[1].legend(loc='best',
              fontsize=6.5)
 #
 fig.tight_layout(pad=0.01)#,h_pad=5.0) #VERIFY H_PAD, PLOT ZOOM?
-plt.savefig('velFluid_comparisons.png',
+plt.savefig('velFluid_comparisons.pdf',
+            format='pdf')
+plt.savefig('velFluid_comparisons.tiff',
             dpi=1000,
-            format='png')
+            format='tiff')
 ###
 
+
 ### FIGURE TWO-PHASE - BUBLE CONCENTRATION
-plt.style.use(os.path.join(os.environ['HOME'],
-                           'Templates',
-                           'matplotlib',
-                           'singleColumn.mplstyle'))
+plt.style.use('singleColumn.mplstyle')
 fig, ax = plt.subplots(1, 2,
                        figsize=(7.0,2.5),
                        sharey=True)
@@ -682,16 +685,16 @@ ax[1].vlines((5,30,50),0,1,lw=0.5)
 #              fontsize=6.5)
 #
 fig.tight_layout(pad=0.01) #VERIFY H_PAD, PLOT ZOOM?
-plt.savefig('concBubble_comparisons.png',
+plt.savefig('concBubble_comparisons.pdf',
+            format='pdf')
+plt.savefig('concBubble_comparisons.tiff',
             dpi=1000,
-            format='png')
+            format='tiff')
 ###
 
+
 ### FIGURE TWO-PHASE - MEAN BUBBLE VELOCITY (ALL CASES)
-plt.style.use(os.path.join(os.environ['HOME'],
-                           'Templates',
-                           'matplotlib',
-                           'singleColumn.mplstyle'))
+plt.style.use('singleColumn.mplstyle')
 fig, ax = plt.subplots(1, 2,
                        figsize=(7.0,2.5),
                        sharey=True)
@@ -774,7 +777,9 @@ ax[1].legend(loc='best',
              fontsize=6.5)
 #
 fig.tight_layout(pad=0.01)#,h_pad=5.0) #VERIFY H_PAD, PLOT ZOOM?
-plt.savefig('velBubble_comparisons.png',
-            dpi=1000,
-            format='png')
+plt.savefig('velBubble_comparisons.pdf',
+            format='pdf')
+# plt.savefig('velBubble_comparisons.tiff',
+#             dpi=1000,
+#             format='tiff')
 ###
