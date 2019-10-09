@@ -570,32 +570,32 @@ ax[0].plot(UP_0[:,0], UP_0[:,1],
            linewidth=1,
            linestyle='-')
 ax[0].plot(UP_A1[:,0], UP_A1[:,1],
-           label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+           label='A1: $\\alpha=0.1\%$, $d_b=100 \mu$m',
            color='black',
            linewidth=1,
            linestyle='-.')
 ax[0].plot(UP_A2[:,0], UP_A2[:,1],
-           label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+           label='A2: $\\alpha=0.1\%$, $d_b=200 \mu$m',
            color='black',
            linewidth=1,
            linestyle='--')
 ax[0].plot(UP_A3[:,0], UP_A3[:,1],
-           label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+           label='A3: $\\alpha=0.1\%$, $d_b=500 \mu$m',
            color='black',
            linewidth=1,
            linestyle=':')
 ax[0].plot(UP_B1[:,0], UP_B1[:,1],
-           label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+           label='B1: $\\alpha=0.5\%$, $d_b=100 \mu$m',
            color='gray',
            linewidth=1,
            linestyle='-.')
 ax[0].plot(UP_B2[:,0], UP_B2[:,1],
-           label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+           label='B2: $\\alpha=0.5\%$, $d_b=200 \mu$m',
            color='gray',
            linewidth=1,
            linestyle='--')
 ax[0].plot(UP_B3[:,0], UP_B3[:,1],
-           label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+           label='B3: $\\alpha=0.5\%$, $d_b=500 \mu$m',
            color='gray',
            linewidth=1,
            linestyle=':')
@@ -607,32 +607,32 @@ axins.plot(UP_0[:,0], UP_0[:,1],
            linewidth=1,
            linestyle='-')
 axins.plot(UP_A1[:,0], UP_A1[:,1],
-           label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+           label='A1: $\\alpha=0.1\%$, $d_b=100 \mu$m',
            color='black',
            linewidth=1,
            linestyle='-.')
 axins.plot(UP_A2[:,0], UP_A2[:,1],
-           label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+           label='A2: $\\alpha=0.1\%$, $d_b=200 \mu$m',
            color='black',
            linewidth=1,
            linestyle='--')
 axins.plot(UP_A3[:,0], UP_A3[:,1],
-           label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+           label='A3: $\\alpha=0.1\%$, $d_b=500 \mu$m',
            color='black',
            linewidth=1,
            linestyle=':')
 axins.plot(UP_B1[:,0], UP_B1[:,1],
-           label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+           label='B1: $\\alpha=0.5\%$, $d_b=100 \mu$m',
            color='gray',
            linewidth=1,
            linestyle='-.')
 axins.plot(UP_B2[:,0], UP_B2[:,1],
-           label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+           label='B2: $\\alpha=0.5\%$, $d_b=200 \mu$m',
            color='gray',
            linewidth=1,
            linestyle='--')
 axins.plot(UP_B3[:,0], UP_B3[:,1],
-           label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+           label='B3: $\\alpha=0.5\%$, $d_b=500 \mu$m',
            color='gray',
            linewidth=1,
            linestyle=':')
@@ -653,32 +653,32 @@ ax[1].semilogx(UP_0[:,0], UP_0[:,1],
                linewidth=1,
                linestyle='-')
 ax[1].semilogx(UP_A1[:,0], UP_A1[:,1],
-               label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+               label='A1: $\\alpha=0.1\%$, $d_b=100 \mu$m',
                color='black',
                linewidth=1,
                linestyle='-.')
 ax[1].semilogx(UP_A2[:,0], UP_A2[:,1],
-               label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+               label='A2: $\\alpha=0.1\%$, $d_b=200 \mu$m',
                color='black',
                linewidth=1,
                linestyle='--')
 ax[1].semilogx(UP_A3[:,0], UP_A3[:,1],
-               label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+               label='A3: $\\alpha=0.1\%$, $d_b=500 \mu$m',
                color='black',
                linewidth=1,
                linestyle=':')
 ax[1].semilogx(UP_B1[:,0], UP_B1[:,1],
-               label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+               label='B1: $\\alpha=0.5\%$, $d_b=100 \mu$m',
                color='gray',
                linewidth=1,
                linestyle='-.')
 ax[1].semilogx(UP_B2[:,0], UP_B2[:,1],
-               label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+               label='B2: $\\alpha=0.5\%$, $d_b=200 \mu$m',
                color='gray',
                linewidth=1,
                linestyle='--')
 ax[1].semilogx(UP_B3[:,0], UP_B3[:,1],
-               label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+               label='B3: $\\alpha=0.5\%$, $d_b=500 \mu$m',
                color='gray',
                linewidth=1,
                linestyle=':')
@@ -711,32 +711,32 @@ ax[0].yaxis.set_minor_locator(plt.MultipleLocator(0.1))
 ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
 ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
 ax[0].plot(cB_A1[:,0], cB_A1[:,1],
-           label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+           label='A1: $\\alpha=0.1\%$, $d_b=100 \mu$m',
            color='black',
            linewidth=1,
            linestyle='-.')
 ax[0].plot(cB_A2[:,0], cB_A2[:,1],
-           label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+           label='A2: $\\alpha=0.1\%$, $d_b=200 \mu$m',
            color='black',
            linewidth=1,
            linestyle='--')
 ax[0].plot(cB_A3[:,0], cB_A3[:,1],
-           label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+           label='A3: $\\alpha=0.1\%$, $d_b=500 \mu$m',
            color='black',
            linewidth=1,
            linestyle=':')
 ax[0].plot(cB_B1[:,0], cB_B1[:,1],
-           label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+           label='B1: $\\alpha=0.5\%$, $d_b=100 \mu$m',
            color='gray',
            linewidth=1,
            linestyle='-.')
 ax[0].plot(cB_B2[:,0], cB_B2[:,1],
-           label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+           label='B2: $\\alpha=0.5\%$, $d_b=200 \mu$m',
            color='gray',
            linewidth=1,
            linestyle='--')
 ax[0].plot(cB_B3[:,0], cB_B3[:,1],
-           label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+           label='B3: $\\alpha=0.5\%$, $d_b=500 \mu$m',
            color='gray',
            linewidth=1,
            linestyle=':')
@@ -747,32 +747,32 @@ ax[1].axis([0.9, 150.0, 0.0, 1.0])
 ax[1].yaxis.set_major_locator(plt.MultipleLocator(0.2))
 ax[1].yaxis.set_minor_locator(plt.MultipleLocator(0.1))
 ax[1].semilogx(cB_A1[:,0], cB_A1[:,1],
-               label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+               label='A1: $\\alpha=0.1\%$, $d_b=100 \mu$m',
                color='black',
                linewidth=1,
                linestyle='-.')
 ax[1].semilogx(cB_A2[:,0], cB_A2[:,1],
-               label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+               label='A2: $\\alpha=0.1\%$, $d_b=200 \mu$m',
                color='black',
                linewidth=1,
                linestyle='--')
 ax[1].semilogx(cB_A3[:,0], cB_A3[:,1],
-               label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+               label='A3: $\\alpha=0.1\%$, $d_b=500 \mu$m',
                color='black',
                linewidth=1,
                linestyle=':')
 ax[1].semilogx(cB_B1[:,0], cB_B1[:,1],
-               label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+               label='B1: $\\alpha=0.5\%$, $d_b=100 \mu$m',
                color='gray',
                linewidth=1,
                linestyle='-.')
 ax[1].semilogx(cB_B2[:,0], cB_B2[:,1],
-               label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+               label='B2: $\\alpha=0.5\%$, $d_b=200 \mu$m',
                color='gray',
                linewidth=1,
                linestyle='--')
 ax[1].semilogx(cB_B3[:,0], cB_B3[:,1],
-               label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+               label='B3: $\\alpha=0.5\%$, $d_b=500 \mu$m',
                color='gray',
                linewidth=1,
                linestyle=':')
@@ -805,32 +805,32 @@ ax[0].yaxis.set_minor_locator(plt.MultipleLocator(1))
 ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
 ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
 ax[0].plot(UP_B_A1[:,0], UP_B_A1[:,1],
-           label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+           label='A1: $\\alpha=0.1\%$, $d_b=100 \mu$m',
            color='black',
            linewidth=1,
            linestyle='-.')
 ax[0].plot(UP_B_A2[:,0], UP_B_A2[:,1],
-           label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+           label='A2: $\\alpha=0.1\%$, $d_b=200 \mu$m',
            color='black',
            linewidth=1,
            linestyle='--')
 ax[0].plot(UP_B_A3[:,0], UP_B_A3[:,1],
-           label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+           label='A3: $\\alpha=0.1\%$, $d_b=500 \mu$m',
            color='black',
            linewidth=1,
            linestyle=':')
 ax[0].plot(UP_B_B1[:,0], UP_B_B1[:,1],
-           label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+           label='B1: $\\alpha=0.5\%$, $d_b=100 \mu$m',
            color='gray',
            linewidth=1,
            linestyle='-.')
 ax[0].plot(UP_B_B2[:,0], UP_B_B2[:,1],
-           label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+           label='B2: $\\alpha=0.5\%$, $d_b=200 \mu$m',
            color='gray',
            linewidth=1,
            linestyle='--')
 ax[0].plot(UP_B_B3[:,0], UP_B_B3[:,1],
-           label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+           label='B3: $\\alpha=0.5\%$, $d_b=500 \mu$m',
            color='gray',
            linewidth=1,
            linestyle=':')
@@ -843,32 +843,32 @@ ax[1].yaxis.set_minor_locator(plt.MultipleLocator(1))
 ax[1].xaxis.set_major_locator(plt.MultipleLocator(30))
 ax[1].xaxis.set_minor_locator(plt.MultipleLocator(10))
 ax[1].semilogx(UP_B_A1[:,0], UP_B_A1[:,1],
-               label='A1 - $\\alpha=0.1\%$, $d_b=100 \mu$m',
+               label='A1: $\\alpha=0.1\%$, $d_b=100 \mu$m',
                color='black',
                linewidth=1,
                linestyle='-.')
 ax[1].semilogx(UP_B_A2[:,0], UP_B_A2[:,1],
-               label='A2 - $\\alpha=0.1\%$, $d_b=200 \mu$m',
+               label='A2: $\\alpha=0.1\%$, $d_b=200 \mu$m',
                color='black',
                linewidth=1,
                linestyle='--')
 ax[1].semilogx(UP_B_A3[:,0], UP_B_A3[:,1],
-               label='A3 - $\\alpha=0.1\%$, $d_b=500 \mu$m',
+               label='A3: $\\alpha=0.1\%$, $d_b=500 \mu$m',
                color='black',
                linewidth=1,
                linestyle=':')
 ax[1].semilogx(UP_B_B1[:,0], UP_B_B1[:,1],
-               label='B1 - $\\alpha=0.5\%$, $d_b=100 \mu$m',
+               label='B1: $\\alpha=0.5\%$, $d_b=100 \mu$m',
                color='gray',
                linewidth=1,
                linestyle='-.')
 ax[1].semilogx(UP_B_B2[:,0], UP_B_B2[:,1],
-               label='B2 - $\\alpha=0.5\%$, $d_b=200 \mu$m',
+               label='B2: $\\alpha=0.5\%$, $d_b=200 \mu$m',
                color='gray',
                linewidth=1,
                linestyle='--')
 ax[1].semilogx(UP_B_B3[:,0], UP_B_B3[:,1],
-               label='B3 - $\\alpha=0.5\%$, $d_b=500 \mu$m',
+               label='B3: $\\alpha=0.5\%$, $d_b=500 \mu$m',
                color='gray',
                linewidth=1,
                linestyle=':')
