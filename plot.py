@@ -887,3 +887,53 @@ plt.savefig('velBubble_comparisons.pdf',
 #             dpi=1000,
 #             format='tiff')
 ###
+
+
+### FIGURE TWO-PHASE - FLUID MEAN VELOCITY (ALL CASES) - SPACE AVERAGE
+Um_CasesA = np.array([0.462, 0.461, 0.459])/0.0302353
+Um_CasesB = np.array([0.512, 0.506, 0.498])/0.0302353
+db = np.array([100, 200, 500])
+A = np.vstack([db, np.ones(len(db))]).T
+m_A, c_A = np.linalg.lstsq(A, Um_CasesA, rcond=None)[0]
+m_B, c_B = np.linalg.lstsq(A, Um_CasesB, rcond=None)[0]
+
+plt.style.use('singleColumn.mplstyle')
+fig, ax = plt.subplots()
+ax.set_xlabel(r'$y^{+}$')
+ax.set_ylabel(r'$\overline{u}^{+}$')
+ax.axis([90.0, 510.0, 14.8, 17])
+ax.xaxis.set_major_locator(plt.MultipleLocator(100))
+ax.xaxis.set_minor_locator(plt.MultipleLocator(50))
+ax.yaxis.set_major_locator(plt.MultipleLocator(0.5))
+ax.yaxis.set_minor_locator(plt.MultipleLocator(0.25))
+ax.scatter(db, Um_CasesA,
+           s=25,
+           c='white',
+           marker='o',
+           edgecolors='black',
+           linewidths='1',
+           label="Cases 'A': $\\alpha=0.1\%$")
+ax.scatter([100, 200, 500],
+           [0.512/0.0302353, 0.506/0.0302353, 0.498/0.0302353],
+           s=25,
+           c='white',
+           marker='s',
+           edgecolors='black',
+           linewidths='1',
+           label="Cases 'B': $\\alpha=0.5\%$")
+ax.plot(db, m_A*db + c_A,
+        color='black',
+        linewidth=1)
+ax.plot(db, m_B*db + c_B,
+        color='black',
+        linewidth=1)
+ax.annotate('Single-phase', (100, 14.9), size='6')
+ax.hlines(0.45/0.0302353,0,550,lw=1.0,ls='-.',color='grey')
+ax.legend(loc='center left')
+fig.tight_layout(pad=0.01)
+plt.savefig('velFluid_avgVelCompareTable.pdf',
+            format='pdf')
+# plt.savefig('velFluid_avgVelCompareTable.tiff',
+#             dpi=1000,
+#             format='tiff')
+###
