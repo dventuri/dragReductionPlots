@@ -358,9 +358,14 @@ ax[1].plot(np.linspace(8,150), 2.5*np.log(np.linspace(8,150))+5.0,
 ax[1].annotate(r'$u^{+} = y^{+}$',(6.98,7),(1.1,7),
                arrowprops=dict(facecolor='black',
                arrowstyle='->'))
-ax[1].annotate(r'$u^{+} = 2.5*\ln{y^{+}}+5$',(15,11.8),(8,18),
+ax[1].annotate(r'$u^{+} = 2.5\ln{(y^{+})}+5$',(15,11.8),(8,18),
                arrowprops=dict(facecolor='black',
                arrowstyle='->'))
+ax[1].annotate('I', (2.5, 4), size='6')
+ax[1].annotate('II', (11, 4), size='6')
+ax[1].annotate('III', (34, 4), size='6')
+ax[1].annotate('IV', (79, 4), size='6')
+ax[1].vlines((5,30,50),0,17,lw=0.5)
 #
 fig.tight_layout(pad=0.01)
 plt.savefig('velFluid_singlePhaseValidation.pdf',
@@ -913,8 +918,7 @@ ax.scatter(db, Um_CasesA,
            edgecolors='black',
            linewidths='1',
            label="Cases 'A': $\\alpha=0.1\%$")
-ax.scatter([100, 200, 500],
-           [0.512/0.0302353, 0.506/0.0302353, 0.498/0.0302353],
+ax.scatter(db, Um_CasesB,
            s=25,
            c='white',
            marker='s',
