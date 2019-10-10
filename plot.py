@@ -954,9 +954,9 @@ fig, ax = plt.subplots(1, 2)
 #
 ax[0].set_xlabel(r'$y^{+}$')
 ax[0].set_ylabel(r'$\overline{u}^{+}$')
-ax[0].axis([0, 150.0, 0.0, 20.0])
-ax[0].yaxis.set_major_locator(plt.MultipleLocator(4))
-ax[0].yaxis.set_minor_locator(plt.MultipleLocator(1))
+ax[0].axis([0, 150.0, 0.0, 21.0])
+ax[0].yaxis.set_major_locator(plt.MultipleLocator(3))
+ax[0].yaxis.set_minor_locator(plt.MultipleLocator(1.5))
 ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
 ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
 ax[0].plot(UP_B_A1[:,0], UP_B_A1[:,1],
@@ -990,40 +990,77 @@ ax[0].plot(UP_B_B3[:,0], UP_B_B3[:,1],
            linewidth=1,
            linestyle=':')
 #
+axins = zoomed_inset_axes(ax[0], 2, loc='center right')
+axins.plot(UP_B_A1[:,0], UP_B_A1[:,1],
+           label='A1: $\\alpha=0.1\%$, $d_b=100 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle='-.')
+axins.plot(UP_B_A2[:,0], UP_B_A2[:,1],
+           label='A2: $\\alpha=0.1\%$, $d_b=200 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle='--')
+axins.plot(UP_B_A3[:,0], UP_B_A3[:,1],
+           label='A3: $\\alpha=0.1\%$, $d_b=500 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle=':')
+axins.plot(UP_B_B1[:,0], UP_B_B1[:,1],
+           label='B1: $\\alpha=0.5\%$, $d_b=100 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle='-.')
+axins.plot(UP_B_B2[:,0], UP_B_B2[:,1],
+           label='B2: $\\alpha=0.5\%$, $d_b=200 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle='--')
+axins.plot(UP_B_B3[:,0], UP_B_B3[:,1],
+           label='B3: $\\alpha=0.5\%$, $d_b=500 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle=':')
+axins.set_xlim(120, 150)
+axins.set_ylim(16.5, 21)
+axins.xaxis.set_visible(False)
+axins.yaxis.set_visible(False)
+mark_inset(ax[0], axins, loc1=1, loc2=2, fc="none", ec="0.5")
+#
 ax[1].set_xlabel(r'$y^{+}$')
 ax[1].set_ylabel(r'$\overline{u}^{+}$')
-ax[1].axis([0.9, 150.0, 0.0, 20.0])
-ax[1].yaxis.set_major_locator(plt.MultipleLocator(4))
-ax[1].yaxis.set_minor_locator(plt.MultipleLocator(1))
+ax[1].axis([0.9, 150.0, 0.0, 21.0])
+ax[1].yaxis.set_major_locator(plt.MultipleLocator(3))
+ax[1].yaxis.set_minor_locator(plt.MultipleLocator(1.5))
 ax[1].xaxis.set_major_locator(plt.MultipleLocator(30))
 ax[1].xaxis.set_minor_locator(plt.MultipleLocator(10))
 ax[1].semilogx(UP_B_A1[:,0], UP_B_A1[:,1],
-               label='A1: $\\alpha=0.1\%$, $d_b=100 \mu$m',
+               label='A1',
                color='black',
                linewidth=1,
                linestyle='-.')
 ax[1].semilogx(UP_B_A2[:,0], UP_B_A2[:,1],
-               label='A2: $\\alpha=0.1\%$, $d_b=200 \mu$m',
+               label='A2',
                color='black',
                linewidth=1,
                linestyle='--')
 ax[1].semilogx(UP_B_A3[:,0], UP_B_A3[:,1],
-               label='A3: $\\alpha=0.1\%$, $d_b=500 \mu$m',
+               label='A3',
                color='black',
                linewidth=1,
                linestyle=':')
 ax[1].semilogx(UP_B_B1[:,0], UP_B_B1[:,1],
-               label='B1: $\\alpha=0.5\%$, $d_b=100 \mu$m',
+               label='B1',
                color='gray',
                linewidth=1,
                linestyle='-.')
 ax[1].semilogx(UP_B_B2[:,0], UP_B_B2[:,1],
-               label='B2: $\\alpha=0.5\%$, $d_b=200 \mu$m',
+               label='B2',
                color='gray',
                linewidth=1,
                linestyle='--')
 ax[1].semilogx(UP_B_B3[:,0], UP_B_B3[:,1],
-               label='B3: $\\alpha=0.5\%$, $d_b=500 \mu$m',
+               label='B3',
                color='gray',
                linewidth=1,
                linestyle=':')
@@ -1031,7 +1068,7 @@ ax[1].annotate('I', (2.5, 4), size='6')
 ax[1].annotate('II', (11, 4), size='6')
 ax[1].annotate('III', (34, 4), size='6')
 ax[1].annotate('IV', (79, 4), size='6')
-ax[1].vlines((5,30,50),0,20,lw=0.5)
+ax[1].vlines((5,30,50),0,21,lw=0.5)
 ax[1].legend(loc='best',
              fontsize=6.5)
 #
