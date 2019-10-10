@@ -382,6 +382,7 @@ fig, ax = plt.subplots(1, 3,
                        figsize=(7.5,1.7),
                        sharex=True)
 ax[0].set_ylabel(r'$u^{+}_{rms}$')
+ax[0].set_xlabel(r'$y^{+}$')
 ax[0].axis([0.0, 150.0, 0.0, 3.0])
 ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
 ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
@@ -417,6 +418,7 @@ ax[0].plot(uP_Pa[:,0], uP_Pa[:,1],
            linestyle= ':')
 ax[0].legend(loc='best')
 #
+ax[1].set_ylabel(r'$v^{+}_{rms}$')
 ax[1].set_xlabel(r'$y^{+}$')
 ax[1].set_ylim([0.0, 1.0])
 ax[1].yaxis.set_major_locator(plt.MultipleLocator(0.5))
@@ -449,6 +451,8 @@ ax[1].plot(vP_Pa[:,0], vP_Pa[:,1],
            linewidth=1,
            linestyle= ':')
 #
+ax[2].set_ylabel(r'$w^{+}_{rms}$')
+ax[2].set_xlabel(r'$y^{+}$')
 ax[2].set_ylim([0.0, 1.2])
 ax[2].yaxis.set_major_locator(plt.MultipleLocator(0.6))
 ax[2].yaxis.set_minor_locator(plt.MultipleLocator(0.3))
