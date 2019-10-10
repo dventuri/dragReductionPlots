@@ -1351,10 +1351,10 @@ ax[2].semilogx(wP_B3[:,0], wP_B3[:,1],
                color='gray',
                linewidth=1,
                linestyle=':')
-ax[2].annotate('I', (0.7, 0.3), size='6')
-ax[2].annotate('II', (11, 0.3), size='6')
-ax[2].annotate('III', (34, 0.3), size='6')
-ax[2].annotate('IV', (79, 0.3), size='6')
+ax[2].annotate('I', (0.7, 0.4), size='6')
+ax[2].annotate('II', (11, 0.4), size='6')
+ax[2].annotate('III', (34, 0.4), size='6')
+ax[2].annotate('IV', (79, 0.4), size='6')
 ax[2].vlines((5,30,50),0,20,lw=0.5)
 #
 fig.tight_layout(pad=0.01)
