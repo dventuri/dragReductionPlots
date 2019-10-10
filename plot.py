@@ -144,6 +144,7 @@ wP_0 = np.loadtxt("graficos_artigo/w_rms_mono_128_dt10(-4)_novo_180000.curve",
 wP_0[:,0] = wP_0[:,0]*0.0302353/(0.001/1000)
 wP_0[:,1] = wP_0[:,1]/0.0302353
 
+#Mean velocity - two-hase
 UP_A1 = np.loadtxt("graficos_artigo/u_average_alfa_0.1_d0.1_172000.curve",
                    dtype=float,
                    skiprows=2,
@@ -181,6 +182,45 @@ UP_B3 = np.loadtxt("graficos_artigo/u_average_bif_alfa0.5_d0.5_195000.curve",
 UP_B3[:,0] = UP_B3[:,0]*0.0302353/(0.001/1000)
 UP_B3[:,1] = UP_B3[:,1]/0.0302353
 
+#rms velocity - two-phase
+uP_A1 = np.loadtxt("graficos_artigo/u_rms_alfa_0.1_d0.1_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+uP_A1[:,0] = uP_A1[:,0]*0.0302353/(0.001/1000)
+uP_A1[:,1] = uP_A1[:,1]/0.0302353
+vP_A1 = np.loadtxt("graficos_artigo/v_rms_alfa_0.1_d0.1_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+vP_A1[:,0] = vP_A1[:,0]*0.0302353/(0.001/1000)
+vP_A1[:,1] = vP_A1[:,1]/0.0302353
+wP_A1 = np.loadtxt("graficos_artigo/w_rms_alfa_0.1_d0.1_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+wP_A1[:,0] = wP_A1[:,0]*0.0302353/(0.001/1000)
+wP_A1[:,1] = wP_A1[:,1]/0.0302353
+
+uP_A2 = np.loadtxt("graficos_artigo/u_rms_alfa_0.1_d0.2_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+uP_A2[:,0] = uP_A2[:,0]*0.0302353/(0.001/1000)
+uP_A2[:,1] = uP_A2[:,1]/0.0302353
+vP_A2 = np.loadtxt("graficos_artigo/v_rms_alfa_0.1_d0.2_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+vP_A2[:,0] = vP_A2[:,0]*0.0302353/(0.001/1000)
+vP_A2[:,1] = vP_A2[:,1]/0.0302353
+wP_A2 = np.loadtxt("graficos_artigo/w_rms_alfa_0.1_d0.2_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+wP_A2[:,0] = wP_A2[:,0]*0.0302353/(0.001/1000)
+wP_A2[:,1] = wP_A2[:,1]/0.0302353
+
 uP_A3 = np.loadtxt("graficos_artigo/u_rms_bif_alfa0.1_d0.5_172000.curve",
                    dtype=float,
                    skiprows=2,
@@ -193,7 +233,71 @@ vP_A3 = np.loadtxt("graficos_artigo/v_rms_alfa0.1_d0.5_172000.curve",
                    delimiter=' ')
 vP_A3[:,0] = vP_A3[:,0]*0.0302353/(0.001/1000)
 vP_A3[:,1] = vP_A3[:,1]/0.0302353
+wP_A3 = np.loadtxt("graficos_artigo/w_rms_alfa0.1_d0.5_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+wP_A3[:,0] = wP_A3[:,0]*0.0302353/(0.001/1000)
+wP_A3[:,1] = wP_A3[:,1]/0.0302353
 
+uP_B1 = np.loadtxt("graficos_artigo/u_rms_alfa0.5_d0.1_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+uP_B1[:,0] = uP_B1[:,0]*0.0302353/(0.001/1000)
+uP_B1[:,1] = uP_B1[:,1]/0.0302353
+vP_B1 = np.loadtxt("graficos_artigo/v_rms_alfa0.5_d0.1_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+vP_B1[:,0] = vP_B1[:,0]*0.0302353/(0.001/1000)
+vP_B1[:,1] = vP_B1[:,1]/0.0302353
+wP_B1 = np.loadtxt("graficos_artigo/w_rms_alfa0.5_d0.1_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+wP_B1[:,0] = wP_B1[:,0]*0.0302353/(0.001/1000)
+wP_B1[:,1] = wP_B1[:,1]/0.0302353
+
+uP_B2 = np.loadtxt("graficos_artigo/u_rms_alfa0.5_d0.2_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+uP_B2[:,0] = uP_B2[:,0]*0.0302353/(0.001/1000)
+uP_B2[:,1] = uP_B2[:,1]/0.0302353
+vP_B2 = np.loadtxt("graficos_artigo/v_rms_alfa0.5_d0.2_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+vP_B2[:,0] = vP_B2[:,0]*0.0302353/(0.001/1000)
+vP_B2[:,1] = vP_B2[:,1]/0.0302353
+wP_B2 = np.loadtxt("graficos_artigo/w_rms_alfa0.5_d0.2_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+wP_B2[:,0] = wP_B2[:,0]*0.0302353/(0.001/1000)
+wP_B2[:,1] = wP_B2[:,1]/0.0302353
+
+uP_B3 = np.loadtxt("graficos_artigo/u_rms_alfa0.5_d0.5_172000.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+uP_B3[:,0] = uP_B3[:,0]*0.0302353/(0.001/1000)
+uP_B3[:,1] = uP_B3[:,1]/0.0302353
+vP_B3 = np.loadtxt("graficos_artigo/v_rms_alfa0.5_d0.5_172000_teste03.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+vP_B3[:,0] = vP_B3[:,0]*0.0302353/(0.001/1000)
+vP_B3[:,1] = vP_B3[:,1]/0.0302353
+wP_B3 = np.loadtxt("graficos_artigo/w_rms_alfa0.5_d0.5_172000_teste03.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+wP_B3[:,0] = wP_B3[:,0]*0.0302353/(0.001/1000)
+wP_B3[:,1] = wP_B3[:,1]/0.0302353
+
+#bubble concentration
 cB_A1 = np.loadtxt("graficos_artigo/volfrac_alfa_0.1_d0.1_172000.curve",
                    dtype=float,
                    skiprows=2,
@@ -943,6 +1047,304 @@ fig.tight_layout(pad=0.01)
 plt.savefig('velFluid_avgVelCompareTable.pdf',
             format='pdf')
 # plt.savefig('velFluid_avgVelCompareTable.tiff',
+#             dpi=1000,
+#             format='tiff')
+###
+
+
+### FIGURE TWO-PHASE - RMS VELOCITIES
+single = []
+bubble = []
+plt.style.use('tiny.mplstyle')
+fig, ax = plt.subplots(1, 3,
+                       figsize=(7.5,1.7),
+                       sharex=True)
+ax[0].set_ylabel(r'$u^{+}_{rms}$')
+ax[0].set_xlabel(r'$y^{+}$')
+ax[0].axis([0.0, 150.0, 0.0, 3.0])
+ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
+ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
+#
+ax[0].yaxis.set_major_locator(plt.MultipleLocator(1.0))
+ax[0].yaxis.set_minor_locator(plt.MultipleLocator(0.5))
+single += ax[0].plot(uP_0[:,0], uP_0[:,1],
+                     label='Single-phase',
+                     color='black',
+                     linewidth=1,
+                     linestyle='-')
+leg1 = ax[0].legend(single, ['Single-phase'],
+                    loc='best', ncol=1)
+bubble += ax[0].plot(uP_A1[:,0], uP_A1[:,1],
+                     label='A1',
+                     color='black',
+                     linewidth=1,
+                     linestyle='-.')
+bubble += ax[0].plot(uP_A2[:,0], uP_A2[:,1],
+                     label='A2',
+                     color='black',
+                     linewidth=1,
+                     linestyle='--')
+bubble += ax[0].plot(uP_A3[:,0], uP_A3[:,1],
+                     label='A3',
+                     color='black',
+                     linewidth=1,
+                     linestyle=':')
+bubble += ax[0].plot(uP_B1[:,0], uP_B1[:,1],
+                     label='B1',
+                     color='gray',
+                     linewidth=1,
+                     linestyle='-.')
+bubble += ax[0].plot(uP_B2[:,0], uP_B2[:,1],
+                     label='B2',
+                     color='gray',
+                     linewidth=1,
+                     linestyle='--')
+bubble += ax[0].plot(uP_B3[:,0], uP_B3[:,1],
+                     label='B3',
+                     color='gray',
+                     linewidth=1,
+                     linestyle=':')
+ax[0].legend(bubble,['A1','A2','A3','B1','B2','B3'],
+             loc='center right',
+             bbox_to_anchor=(1,0.75),
+             ncol=2)
+ax[0].add_artist(leg1)
+#
+ax[1].set_ylabel(r'$v^{+}_{rms}$')
+ax[1].set_xlabel(r'$y^{+}$')
+ax[1].set_ylim([0.0, 1.0])
+ax[1].yaxis.set_major_locator(plt.MultipleLocator(0.5))
+ax[1].yaxis.set_minor_locator(plt.MultipleLocator(0.25))
+ax[1].plot(vP_0[:,0], vP_0[:,1],
+           label='Single-phase',
+           color='black',
+           linewidth=1,
+           linestyle='-')
+ax[1].plot(vP_A1[:,0], vP_A1[:,1],
+           label='A1',
+           color='black',
+           linewidth=1,
+           linestyle='-.')
+ax[1].plot(vP_A2[:,0], vP_A2[:,1],
+           label='A2',
+           color='black',
+           linewidth=1,
+           linestyle='--')
+ax[1].plot(vP_A3[:,0], vP_A3[:,1],
+           label='A3',
+           color='black',
+           linewidth=1,
+           linestyle=':')
+ax[1].plot(vP_B1[:,0], vP_B1[:,1],
+           label='B1',
+           color='gray',
+           linewidth=1,
+           linestyle='-.')
+ax[1].plot(vP_B2[:,0], vP_B2[:,1],
+           label='B2',
+           color='gray',
+           linewidth=1,
+           linestyle='--')
+ax[1].plot(vP_B3[:,0], vP_B3[:,1],
+           label='B3',
+           color='gray',
+           linewidth=1,
+           linestyle=':')
+#
+ax[2].set_ylabel(r'$w^{+}_{rms}$')
+ax[2].set_xlabel(r'$y^{+}$')
+ax[2].set_ylim([0.0, 1.2])
+ax[2].yaxis.set_major_locator(plt.MultipleLocator(0.6))
+ax[2].yaxis.set_minor_locator(plt.MultipleLocator(0.3))
+ax[2].plot(wP_0[:,0], wP_0[:,1],
+           label='Single-phase',
+           color='black',
+           linewidth=1,
+           linestyle='-')
+ax[2].plot(wP_A1[:,0], wP_A1[:,1],
+           label='A1',
+           color='black',
+           linewidth=1,
+           linestyle='-.')
+ax[2].plot(wP_A2[:,0], wP_A2[:,1],
+           label='A2',
+           color='black',
+           linewidth=1,
+           linestyle='--')
+ax[2].plot(wP_A3[:,0], wP_A3[:,1],
+           label='A3',
+           color='black',
+           linewidth=1,
+           linestyle=':')
+ax[2].plot(wP_B1[:,0], wP_B1[:,1],
+           label='B1',
+           color='gray',
+           linewidth=1,
+           linestyle='-.')
+ax[2].plot(wP_B2[:,0], wP_B2[:,1],
+           label='B2',
+           color='gray',
+           linewidth=1,
+           linestyle='--')
+ax[2].plot(wP_B3[:,0], wP_B3[:,1],
+           label='B3',
+           color='gray',
+           linewidth=1,
+           linestyle=':')
+#
+fig.tight_layout(pad=0.01)
+plt.savefig('velFluid_RMS_two-phase.pdf',
+            format='pdf')
+# plt.savefig('velFluid_RMS_singlePhaseValidation.tiff',
+#             dpi=1000,
+#             format='tiff')
+###
+
+
+### FIGURE TWO-PHASE - RMS VELOCITIES - LOG SCALE
+single = []
+bubble = []
+plt.style.use('tiny.mplstyle')
+fig, ax = plt.subplots(1, 3,
+                       figsize=(7.5,1.7),
+                       sharex=True)
+ax[0].set_ylabel(r'$u^{+}_{rms}$')
+ax[0].set_xlabel(r'$y^{+}$')
+ax[0].axis([0.1, 150.0, 0.0, 3.0])
+ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
+ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
+#
+ax[0].yaxis.set_major_locator(plt.MultipleLocator(1.0))
+ax[0].yaxis.set_minor_locator(plt.MultipleLocator(0.5))
+single += ax[0].semilogx(uP_0[:,0], uP_0[:,1],
+                         label='Single-phase',
+                         color='black',
+                         linewidth=1,
+                         linestyle='-')
+leg1 = ax[0].legend(single, ['Single-phase'],
+                    loc='upper left', ncol=1)
+bubble += ax[0].semilogx(uP_A1[:,0], uP_A1[:,1],
+                         label='A1',
+                         color='black',
+                         linewidth=1,
+                         linestyle='-.')
+bubble += ax[0].semilogx(uP_A2[:,0], uP_A2[:,1],
+                         label='A2',
+                         color='black',
+                         linewidth=1,
+                         linestyle='--')
+bubble += ax[0].semilogx(uP_A3[:,0], uP_A3[:,1],
+                         label='A3',
+                         color='black',
+                         linewidth=1,
+                         linestyle=':')
+bubble += ax[0].semilogx(uP_B1[:,0], uP_B1[:,1],
+                         label='B1',
+                         color='gray',
+                         linewidth=1,
+                         linestyle='-.')
+bubble += ax[0].semilogx(uP_B2[:,0], uP_B2[:,1],
+                         label='B2',
+                         color='gray',
+                         linewidth=1,
+                         linestyle='--')
+bubble += ax[0].semilogx(uP_B3[:,0], uP_B3[:,1],
+                         label='B3',
+                         color='gray',
+                         linewidth=1,
+                         linestyle=':')
+ax[0].legend(bubble,['A1','A2','A3','B1','B2','B3'],
+             loc='center left',
+             bbox_to_anchor=(0,0.75),
+             ncol=2)
+ax[0].add_artist(leg1)
+#
+ax[1].set_ylabel(r'$v^{+}_{rms}$')
+ax[1].set_xlabel(r'$y^{+}$')
+ax[1].set_ylim([0.0, 1.0])
+ax[1].yaxis.set_major_locator(plt.MultipleLocator(0.5))
+ax[1].yaxis.set_minor_locator(plt.MultipleLocator(0.25))
+ax[1].semilogx(vP_0[:,0], vP_0[:,1],
+               label='Single-phase',
+               color='black',
+               linewidth=1,
+               linestyle='-')
+ax[1].semilogx(vP_A1[:,0], vP_A1[:,1],
+               label='A1',
+               color='black',
+               linewidth=1,
+               linestyle='-.')
+ax[1].semilogx(vP_A2[:,0], vP_A2[:,1],
+               label='A2',
+               color='black',
+               linewidth=1,
+               linestyle='--')
+ax[1].semilogx(vP_A3[:,0], vP_A3[:,1],
+               label='A3',
+               color='black',
+               linewidth=1,
+               linestyle=':')
+ax[1].semilogx(vP_B1[:,0], vP_B1[:,1],
+               label='B1',
+               color='gray',
+               linewidth=1,
+               linestyle='-.')
+ax[1].semilogx(vP_B2[:,0], vP_B2[:,1],
+               label='B2',
+               color='gray',
+               linewidth=1,
+               linestyle='--')
+ax[1].semilogx(vP_B3[:,0], vP_B3[:,1],
+               label='B3',
+               color='gray',
+               linewidth=1,
+               linestyle=':')
+#
+ax[2].set_ylabel(r'$w^{+}_{rms}$')
+ax[2].set_xlabel(r'$y^{+}$')
+ax[2].set_ylim([0.0, 1.2])
+ax[2].yaxis.set_major_locator(plt.MultipleLocator(0.6))
+ax[2].yaxis.set_minor_locator(plt.MultipleLocator(0.3))
+ax[2].semilogx(wP_0[:,0], wP_0[:,1],
+               label='Single-phase',
+               color='black',
+               linewidth=1,
+               linestyle='-')
+ax[2].semilogx(wP_A1[:,0], wP_A1[:,1],
+               label='A1',
+               color='black',
+               linewidth=1,
+               linestyle='-.')
+ax[2].semilogx(wP_A2[:,0], wP_A2[:,1],
+               label='A2',
+               color='black',
+               linewidth=1,
+               linestyle='--')
+ax[2].semilogx(wP_A3[:,0], wP_A3[:,1],
+               label='A3',
+               color='black',
+               linewidth=1,
+               linestyle=':')
+ax[2].semilogx(wP_B1[:,0], wP_B1[:,1],
+               label='B1',
+               color='gray',
+               linewidth=1,
+               linestyle='-.')
+ax[2].semilogx(wP_B2[:,0], wP_B2[:,1],
+               label='B2',
+               color='gray',
+               linewidth=1,
+               linestyle='--')
+ax[2].semilogx(wP_B3[:,0], wP_B3[:,1],
+               label='B3',
+               color='gray',
+               linewidth=1,
+               linestyle=':')
+#
+fig.tight_layout(pad=0.01)
+plt.savefig('velFluid_RMS_two-phase_log.pdf',
+            format='pdf')
+# plt.savefig('velFluid_RMS_singlePhaseValidation.tiff',
 #             dpi=1000,
 #             format='tiff')
 ###
