@@ -1222,7 +1222,8 @@ single += ax[0].semilogx(uP_0[:,0], uP_0[:,1],
                          linewidth=1,
                          linestyle='-')
 leg1 = ax[0].legend(single, ['Single-phase'],
-                    loc='upper left', ncol=1)
+                    loc='upper left', ncol=1,
+                    facecolor='white')
 bubble += ax[0].semilogx(uP_A1[:,0], uP_A1[:,1],
                          label='A1',
                          color='black',
@@ -1256,8 +1257,13 @@ bubble += ax[0].semilogx(uP_B3[:,0], uP_B3[:,1],
 ax[0].legend(bubble,['A1','A2','A3','B1','B2','B3'],
              loc='center left',
              bbox_to_anchor=(0,0.75),
-             ncol=2)
+             ncol=2, facecolor='white')
 ax[0].add_artist(leg1)
+ax[0].annotate('I', (0.7, 0.6), size='6')
+ax[0].annotate('II', (11, 0.6), size='6')
+ax[0].annotate('III', (34, 0.6), size='6')
+ax[0].annotate('IV', (79, 0.6), size='6')
+ax[0].vlines((5,30,50),0,20,lw=0.5)
 #
 ax[1].set_ylabel(r'$v^{+}_{rms}$')
 ax[1].set_xlabel(r'$y^{+}$')
@@ -1299,6 +1305,11 @@ ax[1].semilogx(vP_B3[:,0], vP_B3[:,1],
                color='gray',
                linewidth=1,
                linestyle=':')
+ax[1].annotate('I', (0.7, 0.1), size='6')
+ax[1].annotate('II', (11, 0.1), size='6')
+ax[1].annotate('III', (34, 0.1), size='6')
+ax[1].annotate('IV', (79, 0.1), size='6')
+ax[1].vlines((5,30,50),0,20,lw=0.5)
 #
 ax[2].set_ylabel(r'$w^{+}_{rms}$')
 ax[2].set_xlabel(r'$y^{+}$')
@@ -1340,6 +1351,11 @@ ax[2].semilogx(wP_B3[:,0], wP_B3[:,1],
                color='gray',
                linewidth=1,
                linestyle=':')
+ax[2].annotate('I', (0.7, 0.3), size='6')
+ax[2].annotate('II', (11, 0.3), size='6')
+ax[2].annotate('III', (34, 0.3), size='6')
+ax[2].annotate('IV', (79, 0.3), size='6')
+ax[2].vlines((5,30,50),0,20,lw=0.5)
 #
 fig.tight_layout(pad=0.01)
 plt.savefig('velFluid_RMS_two-phase_log.pdf',
