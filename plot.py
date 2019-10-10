@@ -899,7 +899,7 @@ m_B, c_B = np.linalg.lstsq(A, Um_CasesB, rcond=None)[0]
 
 plt.style.use('singleColumn.mplstyle')
 fig, ax = plt.subplots()
-ax.set_xlabel(r'$y^{+}$')
+ax.set_xlabel(r'$d_{b}$')
 ax.set_ylabel(r'$\overline{u}^{+}$')
 ax.axis([90.0, 510.0, 14.8, 17])
 ax.xaxis.set_major_locator(plt.MultipleLocator(100))
