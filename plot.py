@@ -866,35 +866,36 @@ ax[0].yaxis.set_minor_locator(plt.MultipleLocator(0.1))
 ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
 ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
 ax[0].plot(cB_A1[:,0], cB_A1[:,1],
-           label='A1: $\\alpha=0.1\%$, $d_b=100 \mu$m',
+           label='A1',
            color='black',
            linewidth=1,
            linestyle='-.')
 ax[0].plot(cB_A2[:,0], cB_A2[:,1],
-           label='A2: $\\alpha=0.1\%$, $d_b=200 \mu$m',
+           label='A2',
            color='black',
            linewidth=1,
            linestyle='--')
 ax[0].plot(cB_A3[:,0], cB_A3[:,1],
-           label='A3: $\\alpha=0.1\%$, $d_b=500 \mu$m',
+           label='A3',
            color='black',
            linewidth=1,
            linestyle=':')
 ax[0].plot(cB_B1[:,0], cB_B1[:,1],
-           label='B1: $\\alpha=0.5\%$, $d_b=100 \mu$m',
+           label='B1',
            color='gray',
            linewidth=1,
            linestyle='-.')
 ax[0].plot(cB_B2[:,0], cB_B2[:,1],
-           label='B2: $\\alpha=0.5\%$, $d_b=200 \mu$m',
+           label='B2',
            color='gray',
            linewidth=1,
            linestyle='--')
 ax[0].plot(cB_B3[:,0], cB_B3[:,1],
-           label='B3: $\\alpha=0.5\%$, $d_b=500 \mu$m',
+           label='B3',
            color='gray',
            linewidth=1,
            linestyle=':')
+ax[0].legend(loc='best', ncol=2)
 #
 ax[1].set_xlabel(r'$y^{+}$')
 ax[1].set_ylabel('$\\alpha$ (%)')
