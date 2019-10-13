@@ -1594,3 +1594,51 @@ plt.savefig('liquidVorticity.pdf',
 #             dpi=1000,
 #             format='tiff')
 ###
+
+
+### FIGURE TWO-PHASE - DRAG REDUCTION
+dR_A = np.array([2.87, 2.51, 1.83])
+dR_B = np.array([20.93, 19.34, 16.65])
+db = np.array([100, 200, 500])
+A = np.vstack([db, np.ones(len(db))]).T
+m_A, c_A = np.linalg.lstsq(A, dR_A, rcond=None)[0]
+m_B, c_B = np.linalg.lstsq(A, dR_B, rcond=None)[0]
+
+plt.style.use('singleColumn.mplstyle')
+fig, ax = plt.subplots()
+ax.set_xlabel(r'$d_{b}$')
+ax.set_ylabel(r'Drag reduction (%)')
+ax.axis([90.0, 510.0, 1, 22])
+ax.xaxis.set_major_locator(plt.MultipleLocator(100))
+ax.xaxis.set_minor_locator(plt.MultipleLocator(50))
+ax.yaxis.set_major_locator(plt.MultipleLocator(2.5))
+ax.yaxis.set_minor_locator(plt.MultipleLocator(1.25))
+ax.scatter(db, dR_A,
+           s=25,
+           c='white',
+           marker='o',
+           edgecolors='black',
+           linewidths='1',
+           label="Cases 'A': $\\alpha=0.1\%$")
+ax.scatter(db, dR_B,
+           s=25,
+           c='white',
+           marker='s',
+           edgecolors='black',
+           linewidths='1',
+           label="Cases 'B': $\\alpha=0.5\%$")
+ax.plot(db, m_A*db + c_A,
+        color='black',
+        linewidth=1)
+ax.plot(db, m_B*db + c_B,
+        color='black',
+        linewidth=1)
+ax.legend(loc='center left')
+ax.grid(True,'major','y')
+fig.tight_layout(pad=0.01)
+plt.savefig('dragReduction.pdf',
+            format='pdf')
+# plt.savefig('dragReduction.tiff',
+#             dpi=1000,
+#             format='tiff')
+###
