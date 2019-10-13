@@ -149,8 +149,13 @@ uvP_0 = np.loadtxt("graficos_artigo/uv_mono_128_dt10(-4)_novo_180000.curve",
                     delimiter=' ')
 uvP_0[:,0] = uvP_0[:,0]*0.0302353/(0.001/1000)
 uvP_0[:,1] = uvP_0[:,1]/0.0302353**2
+vort_0 = np.loadtxt("graficos_artigo/mag_vort_mono.curve",
+                    dtype=float,
+                    skiprows=2,
+                    delimiter=' ')
+vort_0[:,0] = vort_0[:,0]*0.0302353/(0.001/1000)
 
-#Mean velocity - two-hase
+#Mean velocity - two-phase
 UP_A1 = np.loadtxt("graficos_artigo/u_average_alfa_0.1_d0.1_172000.curve",
                    dtype=float,
                    skiprows=2,
@@ -338,6 +343,38 @@ uvP_B3 = np.loadtxt("graficos_artigo/uv_alfa0.5_d0.5_teste02.curve",
                     delimiter=' ')
 uvP_B3[:,0] = uvP_B3[:,0]*0.0302353/(0.001/1000)
 uvP_B3[:,1] = uvP_B3[:,1]/0.0302353**2
+
+#Vorticity - two-hase
+vort_A1 = np.loadtxt("graficos_artigo/mag_vort_alfa01_d01.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+vort_A1[:,0] = vort_A1[:,0]*0.0302353/(0.001/1000)
+vort_A2 = np.loadtxt("graficos_artigo/mag_vort_alfa01_d02.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+vort_A2[:,0] = vort_A2[:,0]*0.0302353/(0.001/1000)
+vort_A3 = np.loadtxt("graficos_artigo/mag_vort_alfa01_d05.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+vort_A3[:,0] = vort_A3[:,0]*0.0302353/(0.001/1000)
+vort_B1 = np.loadtxt("graficos_artigo/mag_vort_alfa05_d01.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+vort_B1[:,0] = vort_B1[:,0]*0.0302353/(0.001/1000)
+vort_B2 = np.loadtxt("graficos_artigo/mag_vort_alfa05_d02.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+vort_B2[:,0] = vort_B2[:,0]*0.0302353/(0.001/1000)
+vort_B3 = np.loadtxt("graficos_artigo/mag_vort_alfa05_d05.curve",
+                   dtype=float,
+                   skiprows=2,
+                   delimiter=' ')
+vort_B3[:,0] = vort_B3[:,0]*0.0302353/(0.001/1000)
 
 #bubble concentration
 cB_A1 = np.loadtxt("graficos_artigo/volfrac_alfa_0.1_d0.1_172000.curve",
@@ -1487,6 +1524,73 @@ fig.tight_layout(pad=0.01)
 plt.savefig('velFluid_RMS_two-phase_log.pdf',
             format='pdf')
 # plt.savefig('velFluid_RMS_singlePhaseValidation.tiff',
+#             dpi=1000,
+#             format='tiff')
+###
+
+
+### FIGURE TWO-PHASE - FLUID VORTICITY
+plt.style.use('singleColumn.mplstyle')
+fig, ax = plt.subplots()
+ax.set_xlabel(r'$y^{+}$')
+ax.set_ylabel(r'$||\vec{\omega}|| \, (s^{-1})$')
+ax.axis([0.1, 150.0, 0.0, 1200.0])
+# ax.xaxis.set_major_locator(plt.MultipleLocator(30))
+# ax.xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax.yaxis.set_major_locator(plt.MultipleLocator(200))
+ax.yaxis.set_minor_locator(plt.MultipleLocator(100))
+ax.semilogx(vort_0[:,0], vort_0[:,1],
+            label='Single-phase',
+            color='black',
+            linewidth=1,
+            linestyle='-')
+leg1 = ax.legend(single, ['Single-phase'],
+                 loc='center left', ncol=1,
+                 facecolor='white')
+ax.semilogx(vort_A1[:,0], vort_A1[:,1],
+            label='A1',
+            color='black',
+            linewidth=1,
+            linestyle='-.')
+ax.semilogx(vort_A2[:,0], vort_A2[:,1],
+            label='A2',
+            color='black',
+            linewidth=1,
+            linestyle='--')
+ax.semilogx(vort_A3[:,0], vort_A3[:,1],
+            label='A3',
+            color='black',
+            linewidth=1,
+            linestyle=':')
+ax.semilogx(vort_B1[:,0], vort_B1[:,1],
+            label='B1',
+            color='gray',
+            linewidth=1,
+            linestyle='-.')
+ax.semilogx(vort_B2[:,0], vort_B2[:,1],
+            label='B2',
+            color='gray',
+            linewidth=1,
+            linestyle='--')
+ax.semilogx(vort_B3[:,0], vort_B3[:,1],
+            label='B3',
+            color='gray',
+            linewidth=1,
+            linestyle=':')
+ax.annotate('I', (0.7, 100), size='6')
+ax.annotate('II', (11, 100), size='6')
+ax.annotate('III', (34, 100), size='6')
+ax.annotate('IV', (79, 100), size='6')
+ax.vlines((5,30,50),0,1200,lw=0.5)
+ax.legend(bubble,['A1','A2','A3','B1','B2','B3'],
+          loc='upper left',
+          bbox_to_anchor=(0,0.49),
+          ncol=2, facecolor='white')
+ax.add_artist(leg1)
+fig.tight_layout(pad=0.01)
+plt.savefig('liquidVorticity.pdf',
+            format='pdf')
+# plt.savefig('liquidVorticity.tiff',
 #             dpi=1000,
 #             format='tiff')
 ###
