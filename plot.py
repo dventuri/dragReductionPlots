@@ -986,6 +986,99 @@ plt.savefig('concBubble_comparisons.pdf',
 ###
 
 
+### FIGURE TWO-PHASE - BUBLE CONCENTRATION - ZOOM
+plt.style.use('twoSingleColumn.mplstyle')
+fig, ax = plt.subplots(1, 2)
+#
+ax[0].set_xlabel(r'$y^{+}$')
+ax[0].set_ylabel('$\\alpha$ (%)')
+ax[0].axis([0, 30.0, 0.0, 1.0])
+ax[0].yaxis.set_major_locator(plt.MultipleLocator(0.2))
+ax[0].yaxis.set_minor_locator(plt.MultipleLocator(0.1))
+ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
+ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax[0].plot(cB_A1[:,0], cB_A1[:,1],
+           label='A1',
+           color='black',
+           linewidth=1,
+           linestyle='-.')
+ax[0].plot(cB_A2[:,0], cB_A2[:,1],
+           label='A2',
+           color='black',
+           linewidth=1,
+           linestyle='--')
+ax[0].plot(cB_A3[:,0], cB_A3[:,1],
+           label='A3',
+           color='black',
+           linewidth=1,
+           linestyle=':')
+ax[0].plot(cB_B1[:,0], cB_B1[:,1],
+           label='B1',
+           color='gray',
+           linewidth=1,
+           linestyle='-.')
+ax[0].plot(cB_B2[:,0], cB_B2[:,1],
+           label='B2',
+           color='gray',
+           linewidth=1,
+           linestyle='--')
+ax[0].plot(cB_B3[:,0], cB_B3[:,1],
+           label='B3',
+           color='gray',
+           linewidth=1,
+           linestyle=':')
+ax[0].legend(loc='best', ncol=2)
+#
+ax[1].set_xlabel(r'$y^{+}$')
+ax[1].set_ylabel('$\\alpha$ (%)')
+ax[1].axis([0.9, 30.0, 0.0, 1.0])
+ax[1].yaxis.set_major_locator(plt.MultipleLocator(0.2))
+ax[1].yaxis.set_minor_locator(plt.MultipleLocator(0.1))
+ax[1].semilogx(cB_A1[:,0], cB_A1[:,1],
+               label='A1: $\\alpha=0.1\%$, $d_b=100 \mu$m',
+               color='black',
+               linewidth=1,
+               linestyle='-.')
+ax[1].semilogx(cB_A2[:,0], cB_A2[:,1],
+               label='A2: $\\alpha=0.1\%$, $d_b=200 \mu$m',
+               color='black',
+               linewidth=1,
+               linestyle='--')
+ax[1].semilogx(cB_A3[:,0], cB_A3[:,1],
+               label='A3: $\\alpha=0.1\%$, $d_b=500 \mu$m',
+               color='black',
+               linewidth=1,
+               linestyle=':')
+ax[1].semilogx(cB_B1[:,0], cB_B1[:,1],
+               label='B1: $\\alpha=0.5\%$, $d_b=100 \mu$m',
+               color='gray',
+               linewidth=1,
+               linestyle='-.')
+ax[1].semilogx(cB_B2[:,0], cB_B2[:,1],
+               label='B2: $\\alpha=0.5\%$, $d_b=200 \mu$m',
+               color='gray',
+               linewidth=1,
+               linestyle='--')
+ax[1].semilogx(cB_B3[:,0], cB_B3[:,1],
+               label='B3: $\\alpha=0.5\%$, $d_b=500 \mu$m',
+               color='gray',
+               linewidth=1,
+               linestyle=':')
+ax[1].annotate('I', (2.5, 0.75), size='6')
+ax[1].annotate('II', (11, 0.75), size='6')
+ax[1].vlines((5,30),0,1,lw=0.5)
+# ax[1].legend(loc='best',
+#              fontsize=6.5)
+#
+fig.tight_layout(pad=0.01)
+plt.savefig('concBubble_comparisons_RI_RII.pdf',
+            format='pdf')
+# plt.savefig('concBubble_comparisons_RI_RII.tiff',
+#             dpi=1000,
+#             format='tiff')
+###
+
+
 ### FIGURE TWO-PHASE - MEAN BUBBLE VELOCITY (ALL CASES)
 plt.style.use('twoSingleColumn.mplstyle')
 fig, ax = plt.subplots(1, 2)
@@ -1114,6 +1207,100 @@ fig.tight_layout(pad=0.01)
 plt.savefig('velBubble_comparisons.pdf',
             format='pdf')
 # plt.savefig('velBubble_comparisons.tiff',
+#             dpi=1000,
+#             format='tiff')
+###
+
+
+### FIGURE TWO-PHASE - MEAN BUBBLE VELOCITY (ALL CASES) - ZOOM
+plt.style.use('twoSingleColumn.mplstyle')
+fig, ax = plt.subplots(1, 2)
+#
+ax[0].set_xlabel(r'$y^{+}$')
+ax[0].set_ylabel(r'$\overline{u}_{b}^{+}$')
+ax[0].axis([0, 30.0, 0.0, 16.0])
+ax[0].yaxis.set_major_locator(plt.MultipleLocator(3))
+ax[0].yaxis.set_minor_locator(plt.MultipleLocator(1.5))
+ax[0].xaxis.set_major_locator(plt.MultipleLocator(30))
+ax[0].xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax[0].plot(UP_B_A1[:,0], UP_B_A1[:,1],
+           label='A1: $\\alpha=0.1\%$, $d_b=100 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle='-.')
+ax[0].plot(UP_B_A2[:,0], UP_B_A2[:,1],
+           label='A2: $\\alpha=0.1\%$, $d_b=200 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle='--')
+ax[0].plot(UP_B_A3[:,0], UP_B_A3[:,1],
+           label='A3: $\\alpha=0.1\%$, $d_b=500 \mu$m',
+           color='black',
+           linewidth=1,
+           linestyle=':')
+ax[0].plot(UP_B_B1[:,0], UP_B_B1[:,1],
+           label='B1: $\\alpha=0.5\%$, $d_b=100 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle='-.')
+ax[0].plot(UP_B_B2[:,0], UP_B_B2[:,1],
+           label='B2: $\\alpha=0.5\%$, $d_b=200 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle='--')
+ax[0].plot(UP_B_B3[:,0], UP_B_B3[:,1],
+           label='B3: $\\alpha=0.5\%$, $d_b=500 \mu$m',
+           color='gray',
+           linewidth=1,
+           linestyle=':')
+#
+ax[1].set_xlabel(r'$y^{+}$')
+ax[1].set_ylabel(r'$\overline{u}_{b}^{+}$')
+ax[1].axis([0.9, 30.0, 0.0, 16.0])
+ax[1].yaxis.set_major_locator(plt.MultipleLocator(3))
+ax[1].yaxis.set_minor_locator(plt.MultipleLocator(1.5))
+ax[1].xaxis.set_major_locator(plt.MultipleLocator(30))
+ax[1].xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax[1].semilogx(UP_B_A1[:,0], UP_B_A1[:,1],
+               label='A1',
+               color='black',
+               linewidth=1,
+               linestyle='-.')
+ax[1].semilogx(UP_B_A2[:,0], UP_B_A2[:,1],
+               label='A2',
+               color='black',
+               linewidth=1,
+               linestyle='--')
+ax[1].semilogx(UP_B_A3[:,0], UP_B_A3[:,1],
+               label='A3',
+               color='black',
+               linewidth=1,
+               linestyle=':')
+ax[1].semilogx(UP_B_B1[:,0], UP_B_B1[:,1],
+               label='B1',
+               color='gray',
+               linewidth=1,
+               linestyle='-.')
+ax[1].semilogx(UP_B_B2[:,0], UP_B_B2[:,1],
+               label='B2',
+               color='gray',
+               linewidth=1,
+               linestyle='--')
+ax[1].semilogx(UP_B_B3[:,0], UP_B_B3[:,1],
+               label='B3',
+               color='gray',
+               linewidth=1,
+               linestyle=':')
+ax[1].annotate('I', (2.5, 4), size='6')
+ax[1].annotate('II', (11, 4), size='6')
+ax[1].vlines((5,30),0,21,lw=0.5)
+ax[1].legend(loc='best',
+             fontsize=6.5)
+#
+fig.tight_layout(pad=0.01)
+plt.savefig('velBubble_comparisons_RI_RII.pdf',
+            format='pdf')
+# plt.savefig('velBubble_comparisons_RI_RII.tiff',
 #             dpi=1000,
 #             format='tiff')
 ###
@@ -1591,6 +1778,67 @@ fig.tight_layout(pad=0.01)
 plt.savefig('liquidVorticity.pdf',
             format='pdf')
 # plt.savefig('liquidVorticity.tiff',
+#             dpi=1000,
+#             format='tiff')
+###
+
+
+### FIGURE TWO-PHASE - FLUID VORTICITY - ZOOM
+plt.style.use('singleColumn.mplstyle')
+fig, ax = plt.subplots()
+ax.set_xlabel(r'$y^{+}$')
+ax.set_ylabel(r'$||\vec{\omega}|| \, (s^{-1})$')
+ax.axis([5, 30, 100, 800])
+# ax.xaxis.set_major_locator(plt.MultipleLocator(30))
+# ax.xaxis.set_minor_locator(plt.MultipleLocator(10))
+ax.yaxis.set_major_locator(plt.MultipleLocator(200))
+ax.yaxis.set_minor_locator(plt.MultipleLocator(100))
+ax.semilogx(vort_0[:,0], vort_0[:,1],
+            label='Single-phase',
+            color='black',
+            linewidth=1,
+            linestyle='-')
+leg1 = ax.legend(single, ['Single-phase'],
+                 loc='center left', ncol=1,
+                 facecolor='white')
+ax.semilogx(vort_A1[:,0], vort_A1[:,1],
+            label='A1',
+            color='black',
+            linewidth=1,
+            linestyle='-.')
+ax.semilogx(vort_A2[:,0], vort_A2[:,1],
+            label='A2',
+            color='black',
+            linewidth=1,
+            linestyle='--')
+ax.semilogx(vort_A3[:,0], vort_A3[:,1],
+            label='A3',
+            color='black',
+            linewidth=1,
+            linestyle=':')
+ax.semilogx(vort_B1[:,0], vort_B1[:,1],
+            label='B1',
+            color='gray',
+            linewidth=1,
+            linestyle='-.')
+ax.semilogx(vort_B2[:,0], vort_B2[:,1],
+            label='B2',
+            color='gray',
+            linewidth=1,
+            linestyle='--')
+ax.semilogx(vort_B3[:,0], vort_B3[:,1],
+            label='B3',
+            color='gray',
+            linewidth=1,
+            linestyle=':')
+ax.legend(bubble,['A1','A2','A3','B1','B2','B3'],
+          loc='best',
+          ncol=2, facecolor='white')
+ax.add_artist(leg1)
+fig.tight_layout(pad=0.01)
+plt.savefig('liquidVorticity_RII.pdf',
+            format='pdf')
+# plt.savefig('liquidVorticity_RII.tiff',
 #             dpi=1000,
 #             format='tiff')
 ###
