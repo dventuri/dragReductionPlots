@@ -1157,7 +1157,7 @@ ax.plot(db, m_B*db + c_B,
         color='black',
         linewidth=1)
 ax.annotate('Single-phase', (100, 14.9), size='6')
-ax.hlines(0.45/0.0302353,0,550,lw=1.0,ls='-.',color='grey')
+ax.hlines(0.45/0.0302353,0,550,lw=1.0,linestyles='-.',color='grey')
 ax.legend(loc='center left')
 ax.grid(True,'minor','y')
 fig.tight_layout(pad=0.01)
